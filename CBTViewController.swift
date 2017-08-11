@@ -12,23 +12,26 @@ import CoreGraphics
 class CBTViewController: UIViewController {
     var stressLevel: StressSignLevel = StressSignLevel.Strong
     var stressIdList: [Int] = []
-    
-
-    
+    var isViewFromTop: Bool = true
+    var resource: String = "CBT0"
     
     @IBAction func backEvent(_ sender: Any) {
-        performSegue(withIdentifier: "stressCoping",sender: nil)
+        if(isViewFromTop){
+            performSegue(withIdentifier: "top",sender: nil)
+        }
+        else{
+            performSegue(withIdentifier: "stressCoping",sender: nil)
+        }
     }
     
     var documentInteractionController: UIDocumentInteractionController?
     
     @IBAction func printEvent(_ sender: Any) {
-        if let path: String = Bundle.main.path(forResource: "assessment", ofType: "pdf"){
+        if let path: String = Bundle.main.path(forResource: resource, ofType: "pdf"){
             let url = NSURL(fileURLWithPath: path as String)
             documentInteractionController = UIDocumentInteractionController(url: url as URL)
             documentInteractionController?.presentOpenInMenu(from: CGRect.zero, in: self.view, animated: true)
         }
-        
     }
     
     @IBOutlet weak var myWebView: UIWebView!
@@ -41,18 +44,34 @@ class CBTViewController: UIViewController {
             }
         }
     }
+
+    @IBAction func assessmentEvent(_ sender: Any) {
+        loadCBTView(resource: "CBT0")
+    }
+
+    @IBAction func cognitiveReconstructionEvent(_ sender: Any) {
+        loadCBTView(resource: "CBT1")
+        
+    }
     
+    @IBAction func problemResolvementEvent(_ sender: Any) {
+        loadCBTView(resource: "CBT2")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(myWebView)
-        if let path: String = Bundle.main.path(forResource: "assessment", ofType: "pdf"){
+        loadCBTView(resource: self.resource)
+
+    }
+    
+    private func loadCBTView(resource :String){
+        self.resource = resource
+        if let path: String = Bundle.main.path(forResource: resource, ofType: "pdf"){
             let url = NSURL(fileURLWithPath: path as String)
             let request = NSURLRequest(url: url as URL)
-
             myWebView.loadRequest(request as URLRequest)
         }
-
-
     }
     
     override func didReceiveMemoryWarning() {

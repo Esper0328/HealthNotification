@@ -19,14 +19,14 @@ class ConfigViewController: UIViewController, UNUserNotificationCenterDelegate, 
     
     let notificationFrequencyList: NSArray = ["毎日", "毎週","１回だけ"]
     
-    var notificationFrequency : NotificationFrequency = .Onetime
+    var notificationFrequency : NotificationFrequency = .Everyday
     var changeddate : DateComponents!
     @IBAction func changeDate(_ sender: UIDatePicker) {
         changeddate = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: sender.date)
     }
 
     @IBOutlet var table: UITableView!
-    
+
     @IBAction func TouchButton(sender: AnyObject) {
         var trigger: UNNotificationTrigger
         switch notificationFrequency {
@@ -46,9 +46,7 @@ class ConfigViewController: UIViewController, UNUserNotificationCenterDelegate, 
         content.sound = UNNotificationSound.default()
         
         // デフォルトの通知。画像などは設定しない
-        let request = UNNotificationRequest(identifier: "normal",
-                                            content: content,
-                                            trigger: trigger)
+        let request = UNNotificationRequest(identifier: "normal", content: content, trigger: trigger)
         
         //通知を予約
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
@@ -61,6 +59,7 @@ class ConfigViewController: UIViewController, UNUserNotificationCenterDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        table.allowsMultipleSelection = false
         if #available(iOS 10.0, *) {
             // iOS 10
             let center = UNUserNotificationCenter.current()
@@ -69,12 +68,8 @@ class ConfigViewController: UIViewController, UNUserNotificationCenterDelegate, 
                     return
                 }
                 if granted {
-                    print("通知許可")
                     let center = UNUserNotificationCenter.current()
-                    center.delegate = self as? UNUserNotificationCenterDelegate
-                    
-                } else {
-                    print("通知拒否")
+                    center.delegate = self
                 }
             })
         }
@@ -105,22 +100,40 @@ class ConfigViewController: UIViewController, UNUserNotificationCenterDelegate, 
         return notificationFrequencyList.count
     }
     
-    func tableView(_ tableView: UITableView,
-                   cellForRowAt indexPath: IndexPath)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
         -> UITableViewCell {
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell",
-                                                     for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
             cell.accessoryType = UITableViewCellAccessoryType.none
             let label = table.viewWithTag(1) as! UILabel
             label.text = "\(notificationFrequencyList[indexPath.row])"
+            let userDefaults = UserDefaults.standard
+            let value: Int? = userDefaults.integer(forKey: "notifFreq")
+            if(value == nil){
+                setCellAccessoryType(accessoryType: &cell.accessoryType, row: indexPath.row, checkValue: notificationFrequency.rawValue)
+            }
+            else{
+                setCellAccessoryType(accessoryType: &cell.accessoryType, row: indexPath.row, checkValue: value!)
+            }
             return cell
+    }
+    
+    
+    private func setCellAccessoryType(accessoryType: inout UITableViewCellAccessoryType, row: Int, checkValue:Int) {
+        if(row == checkValue){
+            accessoryType = .checkmark
+        }
+        else {
+            accessoryType = .none
+        }
     }
     
     func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
         let cell = table.cellForRow(at:indexPath)
         cell?.accessoryType = .checkmark
-        notificationFrequency = (NotificationFrequency)(rawValue: indexPath.row)!
+        notificationFrequency = ConfigViewController.NotificationFrequency(rawValue: indexPath.row)!
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(indexPath.row, forKey: "notifFreq")
+        table.reloadData()
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

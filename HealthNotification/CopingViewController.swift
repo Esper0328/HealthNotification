@@ -23,14 +23,69 @@ class CopingViewController: UIViewController, UITableViewDataSource, UITableView
         performSegue(withIdentifier: "signview",sender: nil)
     }
     
+    
+    enum CopingType: Int{
+        case Common = 0
+        case Individual
+    }
+    
+    enum CommonCopingStrongType: Int{
+        case GoHospital = 0
+        case Sleep
+        case DoNothing
+    }
+    
+    enum CommonCopingMidType: Int{
+        case BATH15minute = 0
+        case SleepLonger
+        case ConsultWithBoss
+        case GoMassage
+        case CBT
+        case GoHospital
+        case Assessment
+    }
+    enum CommonCopingWeakType: Int{
+        case Assesment
+        case AnalyzeFactor
+    }
+    
+/*
+    enum StrongStressSignId: Int{
+        case Tears = 0
+        case Jinmashin
+        case Sucide
+        case CannotDo
+        case SlowWork
+        case DoSame3more
+    }
+    
+    enum MidStressSignId: Int{
+        case ShallowSleep = 0
+        case Vertigo
+        case Irritated
+        case Careless
+        case BadLook
+        case DrinkTooMuch
+        case AvoidCommunication
+    }
+    
+    enum WeakStressSignId: Int{
+        case StiffShoulder = 0
+        case Tension
+        case EatSweets
+        case Drink
+        case DoSame3Less
+    }
+*/
     var stressLevel: StressSignLevel = StressSignLevel.Strong
     var stressIdList: [Int] = []
     
     let stressCopingLevelString: NSArray = ["コーピング:強", "コーピング:中", "コーピング:弱"]
     let sectionTitle: NSArray = ["共通", "個別"]
     
-    let commonCopingArray: [NSArray] = [["上司に言って直ちに帰宅・通院(TEL)", "睡眠を取る", "何もしない"], ["40℃の風呂15分", "睡眠8.5時間", "上司に業務負荷相談", "認知行動療法・カウンセリング", "精神科に行く(TEL)"], ["アセスメント・状況整理"]]
-    let individualCopingArray: [[NSArray]] = [[["なし"]], [["就寝15分前フルニトラゼパム1/4錠"], ["マッサージ"], ["抗不安薬"], ["自分を責めない"], ["美味しいものを食べる"], ["禁酒"], ["相手に配慮し必要に応じ口頭で対応"]], [["マッサージ・ストレッチ", "40℃の風呂15分", "睡眠８時間"],["外に出る,深呼吸"], ["甘いもの450kcal以内OK"], ["酒週３回以内OK"], ["リフレッシュ","グルグル思考になっていないか検討"]]]
+    let commonCopingArray: [NSArray] = [["上司に言って直ちに帰宅・通院(TEL)", "睡眠を取る", "何もしない"], ["40℃の風呂15分", "睡眠8.5時間", "上司に業務負荷相談", "マッサージに行く", "認知行動療法・カウンセリング", "精神科に行く(TEL)"], ["アセスメント","ストレス要因分析"]]
+    
+    let individualCopingArray: [[NSArray]] = [[["なし"]], [["就寝15分前フルニトラゼパム1/4錠"], ["抗不安薬"], ["自分を責めない"], ["美味しいものを食べる"], ["禁酒"], ["相手に配慮し必要に応じ口頭で対応"]], [["セルフマッサージ・ストレッチ", "40℃の風呂15分", "睡眠８時間"],["外に出る,深呼吸"], ["甘いもの450kcal以内OK"], ["酒週３回以内OK"], ["リフレッシュ","グルグル思考になっていないか検討"]]]
     
     
     override func viewDidLoad() {
@@ -52,10 +107,10 @@ class CopingViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ table: UITableView, numberOfRowsInSection section: Int) -> Int {
         stressCopingTypeLabel.text = stressCopingLevelString[stressLevel.rawValue] as? String
         var count : Int = 0
-        if section == 0 {
+        if section == CopingType.Common.rawValue {
             return commonCopingArray[stressLevel.rawValue].count
         }
-        else if section == 1 {
+        else if section == CopingType.Individual.rawValue {
             var isFirst: [Bool] = []
             for i in 0 ..< individualCopingArray[stressLevel.rawValue].count{
                 isFirst.append(true)
@@ -79,10 +134,10 @@ class CopingViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell",
                                                     for: indexPath)
         let label = table.viewWithTag(1) as! UILabel
-        if indexPath.section == 0 {
+        if indexPath.section == CopingType.Common.rawValue {
             label.text = "\(commonCopingArray[stressLevel.rawValue][indexPath.row])"
         }
-        else if indexPath.section == 1 {
+        else if indexPath.section == CopingType.Individual.rawValue {
             var copingArray : [String] = []
             var isFirst: [Bool] = []
             for i in 0 ..< individualCopingArray[stressLevel.rawValue].count{
@@ -105,7 +160,8 @@ class CopingViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
-        if (((stressLevel == .Strong) && (indexPath.section == 0) && (indexPath.row == 0)) || ((stressLevel == .Mid) && (indexPath.section == 0) && (indexPath.row == 4))){
+        if (((stressLevel == .Strong) && (indexPath.section == CopingType.Common.rawValue) && (indexPath.row == CommonCopingStrongType.GoHospital.rawValue))
+            || ((stressLevel == .Mid) && (indexPath.section == CopingType.Common.rawValue) && (indexPath.row == CommonCopingMidType.GoHospital.rawValue))){
             let url = NSURL(string: "tel://0357783600")!
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(url as URL)
@@ -114,7 +170,16 @@ class CopingViewController: UIViewController, UITableViewDataSource, UITableView
                 UIApplication.shared.openURL(url as URL)
             }
         }
-        else if ((stressLevel == .Weak) && (indexPath.section == 0) && (indexPath.row == 0)){
+        else if ((stressLevel == .Mid) && (indexPath.section == CopingType.Common.rawValue) && (indexPath.row == CommonCopingMidType.GoMassage.rawValue)){
+            let url = NSURL(string: "https://mitsuraku.jp/salon/52/")!
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url as URL)
+            }
+            else {
+                UIApplication.shared.openURL(url as URL)
+            }
+        }
+        else if ((stressLevel == .Weak) && (indexPath.section == CopingType.Common.rawValue) && (indexPath.row == CommonCopingWeakType.Assesment.rawValue)){
             performSegue(withIdentifier: "cbt",sender: nil)
         }
     }
@@ -131,7 +196,7 @@ class CopingViewController: UIViewController, UITableViewDataSource, UITableView
             for(_, element) in stressIdList.enumerated(){
                 viewController.stressIdList.append(element)
             }
-
+            viewController.isViewFromTop = false
         }
     }
     

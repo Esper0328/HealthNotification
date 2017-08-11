@@ -14,34 +14,6 @@ enum StressSignLevel: Int {
     case Weak
 }
 
-enum StrongStressSignId: Int{
-    case Tears = 0
-    case Jinmashin
-    case Sucide
-    case CannotDo
-    case SlowWork
-    case DoSame3more
-}
-
-enum MidStressSignId: Int{
-    case ShallowSleep = 0
-    case Vertigo
-    case Irritated
-    case Careless
-    case BadLook
-    case DrinkTooMuch
-    case AvoidCommunication
-}
-
-enum WeakStressSignId: Int{
-    case StiffShoulder = 0
-    case Tension
-    case EatSweets
-    case Drink
-    case DoSame3Less
-}
-
-
 class SignViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet weak var stressSignTypeLabel: UILabel!

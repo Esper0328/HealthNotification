@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		353C31E01F392EE700C37431 /* assessment.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 353C31DF1F392EE700C37431 /* assessment.pdf */; };
 		3552BDE31F262A21009D9BB4 /* CopingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3552BDE21F262A21009D9BB4 /* CopingViewController.swift */; };
 		356E3D441F25F68300844D7A /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356E3D431F25F68300844D7A /* SignViewController.swift */; };
 		357B3DC51F24936800DA6EA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357B3DC41F24936800DA6EA2 /* AppDelegate.swift */; };
@@ -16,6 +15,9 @@
 		357B3DCF1F24936800DA6EA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 357B3DCD1F24936800DA6EA2 /* LaunchScreen.storyboard */; };
 		357B3DDA1F24936800DA6EA2 /* HealthNotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357B3DD91F24936800DA6EA2 /* HealthNotificationTests.swift */; };
 		357B3DE51F24936800DA6EA2 /* HealthNotificationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357B3DE41F24936800DA6EA2 /* HealthNotificationUITests.swift */; };
+		358A0DF71F3A7F700080BB10 /* CBT0.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 358A0DF61F3A7F700080BB10 /* CBT0.pdf */; };
+		358A0DF91F3A7F760080BB10 /* CBT1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 358A0DF81F3A7F760080BB10 /* CBT1.pdf */; };
+		358A0DFB1F3A8E280080BB10 /* CBT2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 358A0DFA1F3A8E280080BB10 /* CBT2.pdf */; };
 		35A056391F3145EA0053A9D0 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A056381F3145EA0053A9D0 /* ConfigViewController.swift */; };
 		35FA53111F36053700D14724 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FA53101F36053700D14724 /* TopViewController.swift */; };
 		35FA53151F36C8F800D14724 /* CBTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FA53141F36C8F800D14724 /* CBTViewController.swift */; };
@@ -39,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		353C31DF1F392EE700C37431 /* assessment.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = assessment.pdf; path = ../../../Desktop/CBT/assessment.pdf; sourceTree = "<group>"; };
 		3552BDE21F262A21009D9BB4 /* CopingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CopingViewController.swift; sourceTree = "<group>"; };
 		356E3D431F25F68300844D7A /* SignViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignViewController.swift; sourceTree = "<group>"; };
 		357B3DC11F24936800DA6EA2 /* HealthNotification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthNotification.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +55,9 @@
 		357B3DE01F24936800DA6EA2 /* HealthNotificationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthNotificationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		357B3DE41F24936800DA6EA2 /* HealthNotificationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthNotificationUITests.swift; sourceTree = "<group>"; };
 		357B3DE61F24936800DA6EA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		358A0DF61F3A7F700080BB10 /* CBT0.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = CBT0.pdf; path = ../../../Desktop/CBT/CBT0.pdf; sourceTree = "<group>"; };
+		358A0DF81F3A7F760080BB10 /* CBT1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = CBT1.pdf; path = ../../../Desktop/CBT/CBT1.pdf; sourceTree = "<group>"; };
+		358A0DFA1F3A8E280080BB10 /* CBT2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = CBT2.pdf; path = ../../../Desktop/CBT/CBT2.pdf; sourceTree = "<group>"; };
 		35A056381F3145EA0053A9D0 /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		35FA53101F36053700D14724 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		35FA53141F36C8F800D14724 /* CBTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBTViewController.swift; path = ../CBTViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +111,9 @@
 		357B3DC31F24936800DA6EA2 /* HealthNotification */ = {
 			isa = PBXGroup;
 			children = (
-				353C31DF1F392EE700C37431 /* assessment.pdf */,
+				358A0DF61F3A7F700080BB10 /* CBT0.pdf */,
+				358A0DF81F3A7F760080BB10 /* CBT1.pdf */,
+				358A0DFA1F3A8E280080BB10 /* CBT2.pdf */,
 				35FA53141F36C8F800D14724 /* CBTViewController.swift */,
 				357B3DC41F24936800DA6EA2 /* AppDelegate.swift */,
 				357B3DC81F24936800DA6EA2 /* Main.storyboard */,
@@ -248,8 +254,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				358A0DF91F3A7F760080BB10 /* CBT1.pdf in Resources */,
 				357B3DCF1F24936800DA6EA2 /* LaunchScreen.storyboard in Resources */,
-				353C31E01F392EE700C37431 /* assessment.pdf in Resources */,
+				358A0DF71F3A7F700080BB10 /* CBT0.pdf in Resources */,
+				358A0DFB1F3A8E280080BB10 /* CBT2.pdf in Resources */,
 				357B3DCC1F24936800DA6EA2 /* Assets.xcassets in Resources */,
 				357B3DCA1F24936800DA6EA2 /* Main.storyboard in Resources */,
 			);

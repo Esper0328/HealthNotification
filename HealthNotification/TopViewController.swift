@@ -28,5 +28,9 @@ class TopViewController: UIViewController{
             let viewController: SignViewController = (segue.destination as? SignViewController)!
             viewController.isViewFromTop = true
         }
+        else if(segue.identifier == "cbt"){
+            let viewController: CBTViewController = (segue.destination as? CBTViewController)!
+            viewController.isViewFromTop = true
+        }
     }
 }

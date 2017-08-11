@@ -96,7 +96,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bgJ-V5-BjH" id="Ooh-5F-OHt">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRc-GS-1jN">
@@ -352,19 +352,44 @@
                                 </connections>
                             </button>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LQR-BM-xEt">
-                                <rect key="frame" x="0.0" y="28" width="375" height="581"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="513"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="7OJ-pQ-rb7" id="2rd-ju-1yi"/>
                                 </connections>
                             </webView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fun-5v-aIc">
+                                <rect key="frame" x="21" y="565" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="アセスメント"/>
+                                <connections>
+                                    <action selector="assessmentEvent:" destination="7OJ-pQ-rb7" eventType="touchUpInside" id="CVK-R7-4nw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsD-pA-u0Z">
+                                <rect key="frame" x="141" y="565" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="認知再構成法"/>
+                                <connections>
+                                    <action selector="cognitiveReconstructionEvent:" destination="7OJ-pQ-rb7" eventType="touchUpInside" id="Rdk-ac-yiM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPL-M6-tHc">
+                                <rect key="frame" x="270" y="565" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="問題解決法"/>
+                                <connections>
+                                    <action selector="problemResolvementEvent:" destination="7OJ-pQ-rb7" eventType="touchUpInside" id="YsH-Xw-sHQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="myWebView" destination="LQR-BM-xEt" id="xul-CA-8Zc"/>
                         <segue destination="Fhv-ap-KR4" kind="show" identifier="stressCoping" id="YGw-Lm-k7Q"/>
+                        <segue destination="NJJ-wR-Xsy" kind="show" identifier="top" id="iBn-nI-SPH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GwW-9K-1y7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -374,8 +399,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="mFn-fb-Gub"/>
-        <segue reference="Ks4-8L-x1b"/>
-        <segue reference="YGw-Lm-k7Q"/>
+        <segue reference="sUJ-zE-D4O"/>
         <segue reference="vE0-Da-EcL"/>
+        <segue reference="YGw-Lm-k7Q"/>
     </inferredMetricsTieBreakers>
 </document>
