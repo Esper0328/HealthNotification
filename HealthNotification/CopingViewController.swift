@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class CopingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
-    
+class CopingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate{
     
     @IBOutlet var table:UITableView!
     @IBOutlet var button: UIButton!
@@ -20,9 +20,22 @@ class CopingViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     @IBAction func backEvent(_ sender: Any) {
+        switch stressLevel {
+        case .Strong:
+            resetIsExistStressSign(level: .Strong)
+        case .Mid:
+            resetIsExistStressSign(level: .Mid)
+        case .Weak:
+            resetIsExistStressSign(level: .Weak)
+        }
         performSegue(withIdentifier: "signview",sender: nil)
     }
     
+    func resetIsExistStressSign(level: StressSignLevel){
+        for i in (stressSignIndex[level]!.0)..<(stressSignIndex[level]!.1){
+            stressCheckResult[i].isExistStress = false
+        }
+    }
     
     enum CopingType: Int{
         case Common = 0
@@ -30,67 +43,99 @@ class CopingViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     enum CommonCopingStrongType: Int{
-        case GoHospital = 0
-        case Sleep
+        case Sickleave = 0
         case DoNothing
+        case GoHospital
+        case SleepLonger
+        case CBT
     }
     
     enum CommonCopingMidType: Int{
-        case BATH15minute = 0
+        case SleepChcek = 0
+        case Bath
         case SleepLonger
+        case DietCheck
         case ConsultWithBoss
-        case GoMassage
         case CBT
+        case Counseling
+        case ConsultWithOthers
+        case Medicine
         case GoHospital
-        case Assessment
+        case GoMassage
     }
     enum CommonCopingWeakType: Int{
+        case Relaxation = 0
+        case Refresh
+        case Bath
+        case Sleep
         case Assesment
-        case AnalyzeFactor
+        case Counseling
+        case ConsultWithOthers
     }
     
-/*
-    enum StrongStressSignId: Int{
-        case Tears = 0
-        case Jinmashin
-        case Sucide
-        case CannotDo
-        case SlowWork
-        case DoSame3more
-    }
-    
-    enum MidStressSignId: Int{
-        case ShallowSleep = 0
-        case Vertigo
-        case Irritated
-        case Careless
-        case BadLook
-        case DrinkTooMuch
-        case AvoidCommunication
-    }
-    
-    enum WeakStressSignId: Int{
-        case StiffShoulder = 0
-        case Tension
-        case EatSweets
-        case Drink
-        case DoSame3Less
-    }
-*/
     var stressLevel: StressSignLevel = StressSignLevel.Strong
     var stressIdList: [Int] = []
     
     let stressCopingLevelString: NSArray = ["コーピング:強", "コーピング:中", "コーピング:弱"]
     let sectionTitle: NSArray = ["共通", "個別"]
+    var isViewFromMail: Bool = false
     
-    let commonCopingArray: [NSArray] = [["上司に言って直ちに帰宅・通院(TEL)", "睡眠を取る", "何もしない"], ["40℃の風呂15分", "睡眠8.5時間", "上司に業務負荷相談", "マッサージに行く", "認知行動療法・カウンセリング", "精神科に行く(TEL)"], ["アセスメント","ストレス要因分析"]]
+    let commonCopingArray: [NSArray] = [["休暇申請", "休息を取る・何もしない", "精神科に行く","8.5時間睡眠","認知行動療法"], ["睡眠を見直す", "40℃の風呂15分", "睡眠8.5時間", "食生活を見直す", "上司に業務負荷相談", "認知行動療法", "カウンセリング", "同僚・友人・パートナーに相談", "症状に応じた薬を飲む", "精神科に行く(TEL)", "マッサージに行く"], ["呼吸法・自律訓練法・瞑想","気分転換","40℃の風呂15分","7.5時間睡眠","状況整理・認知行動療法","カウンセリング","サポート資源に相談"]]
     
-    let individualCopingArray: [[NSArray]] = [[["なし"]], [["就寝15分前フルニトラゼパム1/4錠"], ["抗不安薬"], ["自分を責めない"], ["美味しいものを食べる"], ["禁酒"], ["相手に配慮し必要に応じ口頭で対応"]], [["セルフマッサージ・ストレッチ", "40℃の風呂15分", "睡眠８時間"],["外に出る,深呼吸"], ["甘いもの450kcal以内OK"], ["酒週３回以内OK"], ["リフレッシュ","グルグル思考になっていないか検討"]]]
+    let individualCopingArray: [[NSArray]] = [[["常備薬を飲む"],["サポート資源に相談"],["抗うつ薬を飲む"],["気力があれば認知行動療法"],[""]], [["食生活を見直す"], ["整腸剤・トイレに行く"], ["一時的に席から離れる・外に出る"], ["お昼休みに20分寝る"], ["フルニトラゼパム0.20mg","電子機器見ない","マッサージ器使用"], ["フルニトラゼパム0.20mg"],["抗うつ剤を飲む"],["要因を分析する"],["抗不安薬を飲む","セルフストレッチ・マッサージ","呼吸法・自律訓練法・瞑想","その場を離れ休憩"],["上司に言って早めに帰宅"],["筋弛緩剤","就寝２H前電子機器見ない"],["ミスを自分自身で責めない"],["相手を配慮し口頭で伝える"],["飲酒禁止＆食・酒生活を見直す"]], [["セルフマッサージ・ストレッチ", "就寝２H前電子機器見ない"],["外に出る・深呼吸・音楽を聴く"], ["甘いもの450kcal以内OK"], ["酒週３回以内OK"], ["リフレッシュ","グルグル思考になっていないか検討"]]]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        button.setTitle("終了", for: .normal)
     }
+
+    @IBAction func SendMailButton(_ sender: Any) {
+        sendStressCheckResult()
+    }
+    
+    func sendStressCheckResult(){
+        if MFMailComposeViewController.canSendMail() {
+            var bodyMessage: String = ""
+            bodyMessage += addCheckResult(level: .Strong)
+            bodyMessage += addCheckResult(level: .Mid)
+            bodyMessage += addCheckResult(level: .Weak)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let date = Date()
+            let dateString = dateFormatter.string(from: date)
+            
+            
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["esper0328@gmail.com"]) // 宛先アドレス
+            
+            mail.setSubject("ストレスチェック結果:" + dateString) // 件名
+            mail.setMessageBody(bodyMessage, isHTML: false) // 本文
+            present(mail, animated: true, completion: nil)
+        } else {
+            print("Cannot Send")
+        }
+    }
+    
+    
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        switch result {
+        case .cancelled:
+            print("キャンセル")
+        case .saved:
+            print("下書き保存")
+        case .sent:
+            print("送信成功")
+            saveStressCheckResult()
+        default:
+            print("送信失敗")
+            saveStressCheckResult()
+        }
+        dismiss(animated: true, completion: nil)
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -179,7 +224,9 @@ class CopingViewController: UIViewController, UITableViewDataSource, UITableView
                 UIApplication.shared.openURL(url as URL)
             }
         }
-        else if ((stressLevel == .Weak) && (indexPath.section == CopingType.Common.rawValue) && (indexPath.row == CommonCopingWeakType.Assesment.rawValue)){
+        else if (((stressLevel == .Weak) && (indexPath.section == CopingType.Common.rawValue) && (indexPath.row == CommonCopingWeakType.Assesment.rawValue)) || ((stressLevel == .Mid) && (indexPath.section == CopingType.Common.rawValue) && (indexPath.row == CommonCopingMidType.CBT.rawValue)) || ((stressLevel == .Strong) && (indexPath.section == CopingType.Common.rawValue) && (indexPath.row == CommonCopingStrongType.CBT.rawValue))
+            
+            ){
             performSegue(withIdentifier: "cbt",sender: nil)
         }
     }
@@ -199,6 +246,8 @@ class CopingViewController: UIViewController, UITableViewDataSource, UITableView
             viewController.isViewFromTop = false
         }
     }
+    
+
     
 }
 

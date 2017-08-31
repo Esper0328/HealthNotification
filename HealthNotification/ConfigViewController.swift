@@ -18,7 +18,9 @@ class ConfigViewController: UIViewController, UNUserNotificationCenterDelegate, 
     }
     
     let notificationFrequencyList: NSArray = ["毎日", "毎週","１回だけ"]
-    
+
+
+    @IBOutlet weak var datepicker: UIDatePicker!
     var notificationFrequency : NotificationFrequency = .Everyday
     var changeddate : DateComponents!
     @IBAction func changeDate(_ sender: UIDatePicker) {
@@ -26,31 +28,33 @@ class ConfigViewController: UIViewController, UNUserNotificationCenterDelegate, 
     }
 
     @IBOutlet var table: UITableView!
-
-    @IBAction func TouchButton(sender: AnyObject) {
+    @IBAction func configSetEvent(sender: AnyObject) {
         var trigger: UNNotificationTrigger
-        switch notificationFrequency {
-        case .Everyday:
-            let dateComponents = DateComponents(hour: changeddate.hour, minute: changeddate.minute)
-            trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        case .Everyweek:
-            let dateComponents = DateComponents(hour: changeddate.hour ,minute: changeddate.minute, weekday: changeddate.weekday)
-            trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-            break
-        case .Onetime:
-            trigger = UNCalendarNotificationTrigger(dateMatching: changeddate, repeats: false)
+        if changeddate != nil{
+            switch notificationFrequency {
+            case .Everyday:
+                let dateComponents = DateComponents(hour: changeddate.hour, minute: changeddate.minute)
+                trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+            case .Everyweek:
+                let dateComponents = DateComponents(hour: changeddate.hour ,minute: changeddate.minute, weekday: changeddate.weekday)
+                trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+                break
+            case .Onetime:
+                trigger = UNCalendarNotificationTrigger(dateMatching: changeddate, repeats: false)
+            }
+            let content = UNMutableNotificationContent()
+            content.title = "ストレスサインチェック"
+            content.body = "該当するサインをタップして下さい"
+            content.sound = UNNotificationSound.default()
+        
+            // デフォルトの通知。画像などは設定しない
+            let request = UNNotificationRequest(identifier: "normal", content: content, trigger: trigger)
+        
+            //通知を予約
+            let center = UNUserNotificationCenter.current()
+            center.add(request, withCompletionHandler: nil)
+            performSegue(withIdentifier: "top", sender: nil)
         }
-        let content = UNMutableNotificationContent()
-        content.title = "ストレスサインチェック"
-        content.body = "該当するサインをタップして下さい」"
-        content.sound = UNNotificationSound.default()
-        
-        // デフォルトの通知。画像などは設定しない
-        let request = UNNotificationRequest(identifier: "normal", content: content, trigger: trigger)
-        
-        //通知を予約
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-        performSegue(withIdentifier: "top", sender: nil)
     }
     
     @IBAction func backEvent(_ sender: Any) {
@@ -60,37 +64,8 @@ class ConfigViewController: UIViewController, UNUserNotificationCenterDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         table.allowsMultipleSelection = false
-        if #available(iOS 10.0, *) {
-            // iOS 10
-            let center = UNUserNotificationCenter.current()
-            center.requestAuthorization(options: [.badge, .sound, .alert], completionHandler: { (granted, error) in
-                if error != nil {
-                    return
-                }
-                if granted {
-                    let center = UNUserNotificationCenter.current()
-                    center.delegate = self
-                }
-            })
-        }
+        self.datepicker.minimumDate = datepicker.date
     }
-    
-    
-    //To display notifications when app is running  inforeground
-    private func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                        willPresent notification: UNNotification,
-                                        withCompletionHandler completionHandler: (UNNotificationPresentationOptions) -> Void) {
-        let identifier = notification.request.identifier
-        switch identifier {
-        case "alert":
-            completionHandler([.alert]) // 通知のみ行う
-        case "both":
-            completionHandler([.sound, .alert]) // サウンドと通知
-        default:
-            ()
-        }
-    }
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -18,9 +18,12 @@
 		358A0DF71F3A7F700080BB10 /* CBT0.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 358A0DF61F3A7F700080BB10 /* CBT0.pdf */; };
 		358A0DF91F3A7F760080BB10 /* CBT1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 358A0DF81F3A7F760080BB10 /* CBT1.pdf */; };
 		358A0DFB1F3A8E280080BB10 /* CBT2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 358A0DFA1F3A8E280080BB10 /* CBT2.pdf */; };
+		359D44DA1F5298A4006AB494 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359D44D91F5298A4006AB494 /* MessageUI.framework */; };
+		359D44DC1F54DAAF006AB494 /* CommonDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D44DB1F54DAAF006AB494 /* CommonDefinition.swift */; };
+		359D44DE1F54DC9A006AB494 /* MailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D44DD1F54DC9A006AB494 /* MailViewController.swift */; };
+		359D44E01F578C6D006AB494 /* CBTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D44DF1F578C6D006AB494 /* CBTViewController.swift */; };
 		35A056391F3145EA0053A9D0 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A056381F3145EA0053A9D0 /* ConfigViewController.swift */; };
 		35FA53111F36053700D14724 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FA53101F36053700D14724 /* TopViewController.swift */; };
-		35FA53151F36C8F800D14724 /* CBTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FA53141F36C8F800D14724 /* CBTViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,9 +61,12 @@
 		358A0DF61F3A7F700080BB10 /* CBT0.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = CBT0.pdf; path = ../../../Desktop/CBT/CBT0.pdf; sourceTree = "<group>"; };
 		358A0DF81F3A7F760080BB10 /* CBT1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = CBT1.pdf; path = ../../../Desktop/CBT/CBT1.pdf; sourceTree = "<group>"; };
 		358A0DFA1F3A8E280080BB10 /* CBT2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = CBT2.pdf; path = ../../../Desktop/CBT/CBT2.pdf; sourceTree = "<group>"; };
+		359D44D91F5298A4006AB494 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		359D44DB1F54DAAF006AB494 /* CommonDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDefinition.swift; sourceTree = "<group>"; };
+		359D44DD1F54DC9A006AB494 /* MailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailViewController.swift; sourceTree = "<group>"; };
+		359D44DF1F578C6D006AB494 /* CBTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBTViewController.swift; sourceTree = "<group>"; };
 		35A056381F3145EA0053A9D0 /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		35FA53101F36053700D14724 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
-		35FA53141F36C8F800D14724 /* CBTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBTViewController.swift; path = ../CBTViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				359D44DA1F5298A4006AB494 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +102,7 @@
 				357B3DD81F24936800DA6EA2 /* HealthNotificationTests */,
 				357B3DE31F24936800DA6EA2 /* HealthNotificationUITests */,
 				357B3DC21F24936800DA6EA2 /* Products */,
+				359D44D81F5298A4006AB494 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,12 +122,14 @@
 				358A0DF61F3A7F700080BB10 /* CBT0.pdf */,
 				358A0DF81F3A7F760080BB10 /* CBT1.pdf */,
 				358A0DFA1F3A8E280080BB10 /* CBT2.pdf */,
-				35FA53141F36C8F800D14724 /* CBTViewController.swift */,
+				359D44DF1F578C6D006AB494 /* CBTViewController.swift */,
 				357B3DC41F24936800DA6EA2 /* AppDelegate.swift */,
 				357B3DC81F24936800DA6EA2 /* Main.storyboard */,
 				35FA53101F36053700D14724 /* TopViewController.swift */,
 				35A056381F3145EA0053A9D0 /* ConfigViewController.swift */,
 				356E3D431F25F68300844D7A /* SignViewController.swift */,
+				359D44DB1F54DAAF006AB494 /* CommonDefinition.swift */,
+				359D44DD1F54DC9A006AB494 /* MailViewController.swift */,
 				357B3DCB1F24936800DA6EA2 /* Assets.xcassets */,
 				357B3DCD1F24936800DA6EA2 /* LaunchScreen.storyboard */,
 				357B3DD01F24936800DA6EA2 /* Info.plist */,
@@ -144,6 +154,14 @@
 				357B3DE61F24936800DA6EA2 /* Info.plist */,
 			);
 			path = HealthNotificationUITests;
+			sourceTree = "<group>";
+		};
+		359D44D81F5298A4006AB494 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				359D44D91F5298A4006AB494 /* MessageUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,10 +302,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				359D44DC1F54DAAF006AB494 /* CommonDefinition.swift in Sources */,
 				356E3D441F25F68300844D7A /* SignViewController.swift in Sources */,
 				357B3DC51F24936800DA6EA2 /* AppDelegate.swift in Sources */,
-				35FA53151F36C8F800D14724 /* CBTViewController.swift in Sources */,
 				35A056391F3145EA0053A9D0 /* ConfigViewController.swift in Sources */,
+				359D44E01F578C6D006AB494 /* CBTViewController.swift in Sources */,
+				359D44DE1F54DC9A006AB494 /* MailViewController.swift in Sources */,
 				3552BDE31F262A21009D9BB4 /* CopingViewController.swift in Sources */,
 				35FA53111F36053700D14724 /* TopViewController.swift in Sources */,
 			);

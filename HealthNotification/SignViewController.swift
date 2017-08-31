@@ -7,25 +7,21 @@
 //
 
 import UIKit
+import MessageUI
 
-enum StressSignLevel: Int {
-    case Strong = 0
-    case Mid
-    case Weak
-}
-
-class SignViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class SignViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate{
     
     @IBOutlet weak var stressSignTypeLabel: UILabel!
     @IBOutlet var table:UITableView!
     @IBOutlet var button: UIButton!
     @IBOutlet weak var backbutton: UIButton!
+    @IBOutlet weak var sendbutton: UIButton!
     var stressLevel: StressSignLevel = .Strong
     var stressIdList: [Int] = []
     var isCopingNeeded: Bool = false
     var isViewFromTop: Bool = true
     
-    @IBAction func TouchButton(sender: AnyObject) {
+    @IBAction func nextEvent(sender: AnyObject) {
         if isCopingNeeded {
             performSegue(withIdentifier: "stressCoping",sender: nil)
         }
@@ -38,6 +34,7 @@ class SignViewController: UIViewController, UITableViewDataSource, UITableViewDe
             case .Mid:
                 stressLevel = .Weak
                 button.setTitle("終了", for: .normal)
+                sendbutton.isEnabled = true
             case .Weak:
                 performSegue(withIdentifier: "top",sender: nil)
             }
@@ -49,12 +46,17 @@ class SignViewController: UIViewController, UITableViewDataSource, UITableViewDe
         switch stressLevel {
         case .Strong:
             backbutton.isEnabled = false
+            sendbutton.isEnabled = false
         case .Mid:
             stressLevel = .Strong
-            backbutton.isEnabled = true
+            backbutton.isEnabled = false
+            sendbutton.isEnabled = false
+            resetIsExistStressSign(level: .Strong)
         case .Weak:
             stressLevel = .Mid
             backbutton.isEnabled = true
+            sendbutton.isEnabled = false
+            resetIsExistStressSign(level: .Mid)
             if(isViewFromTop){
             
             }
@@ -65,31 +67,77 @@ class SignViewController: UIViewController, UITableViewDataSource, UITableViewDe
         table.reloadData()
     }
     
-    let stressSignLevelString: NSArray = ["ストレスサイン:強", "ストレスサイン:中", "ストレスサイン:弱"]
-    let stressSignArray: [NSArray] = [["涙が出る", "蕁麻疹", "消えたくなる・死にたくなる", "何もできなくなる", "仕事が遅くなる", "同じことを３回以上繰返す"], ["入眠困難・浅い睡眠", "顔の張り・目眩","イライラ・しんどさ", "ケアレスミス・物忘れ１日３回以上", "無口になる・食欲減退・外見悪化","飲酒週に３回以上","苦手な人とのコミュニケーションを避ける"], ["首・肩・背中・腰・脹脛・足裏の疲れ", "緊張感", "甘いものを食べたくなる", "酒を飲みたくなる", "仕事のことを考え過ぎ・同じことを繰返す"]]
-    var isStress: [Bool] = []
+    @IBAction func sendMailEvent(_ sender: Any) {
+        sendStressCheckResult()
+    }
+    
+    func sendStressCheckResult(){
+        if MFMailComposeViewController.canSendMail() {
+            var bodyMessage: String = ""
+            bodyMessage += addCheckResult(level: .Strong)
+            bodyMessage += addCheckResult(level: .Mid)
+            bodyMessage += addCheckResult(level: .Weak)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let date = Date()
+            let dateString = dateFormatter.string(from: date)
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["esper0328@gmail.com"]) // 宛先アドレス
+            mail.setSubject("ストレスチェック結果:" + dateString) // 件名
+            mail.setMessageBody(bodyMessage, isHTML: false) // 本文
+            present(mail, animated: true, completion: nil)
+        } else {
+            print("Cannot Send")
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        switch result {
+        case .cancelled:
+            print("キャンセル")
+        case .saved:
+            print("下書き保存")
+        case .sent:
+            print("送信成功")
+            saveStressCheckResult()
+        default:
+            print("送信失敗")
+            saveStressCheckResult()
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func resetIsExistStressSign(level: StressSignLevel){
+        for i in (stressSignIndex[level]!.0)..<(stressSignIndex[level]!.1){
+            stressCheckResult[i].isExistStress = false
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for (_, _)in stressSignArray[StressSignLevel.Mid.rawValue].enumerated(){
-            //最大のストレスサイン配列の数だけ作成
-            isStress.append(false)
-        }
         switch stressLevel {
         case .Strong:
             backbutton.isEnabled = false
+            sendbutton.isEnabled = false
+            resetIsExistStressSign(level: .Strong)
         case .Mid:
             backbutton.isEnabled = true
+            sendbutton.isEnabled = false
+            resetIsExistStressSign(level: .Mid)
         case .Weak:
             if(isViewFromTop){
                 button.setTitle("次へ", for: .normal)
             }
             else {
                 button.setTitle("終了", for: .normal)
+                sendbutton.isEnabled = true
+                resetIsExistStressSign(level: .Weak)
             }
             backbutton.isEnabled = true
         }
     }
+    
 
     
     override func didReceiveMemoryWarning() {
@@ -97,8 +145,8 @@ class SignViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ table: UITableView, numberOfRowsInSection section: Int) -> Int {
-        stressSignTypeLabel.text = stressSignLevelString[stressLevel.rawValue] as? String
-        return stressSignArray[stressLevel.rawValue].count
+        stressSignTypeLabel.text = stressSignLevelString[stressLevel]
+        return (stressSignList[stressLevel]?.count)!
     }
     
     func tableView(_ tableView: UITableView,
@@ -109,15 +157,16 @@ class SignViewController: UIViewController, UITableViewDataSource, UITableViewDe
                                                      for: indexPath)
             cell.accessoryType = UITableViewCellAccessoryType.none
             let label = table.viewWithTag(1) as! UILabel
-            label.text = "\(stressSignArray[stressLevel.rawValue][indexPath.row])"
+            label.text = stressSignString[(stressSignList[stressLevel]?[indexPath.row])!]
             return cell
     }
     
     func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
         let cell = table.cellForRow(at:indexPath)
+
         if cell?.accessoryType == UITableViewCellAccessoryType.none {
             cell?.accessoryType = UITableViewCellAccessoryType.checkmark
-            isStress[indexPath.count] = true
+            stressCheckResult[stressSignIndex[stressLevel]!.0 + indexPath.row].isExistStress = true
             var isNewId : Bool = true
             for(_, element) in stressIdList.enumerated(){
                 if(element == indexPath.row){
@@ -130,15 +179,16 @@ class SignViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         else {
             cell?.accessoryType = UITableViewCellAccessoryType.none
-            isStress[indexPath.count] = false
+            stressCheckResult[stressSignIndex[stressLevel]!.0 + indexPath.count].isExistStress = false
         }
-        
         isCopingNeeded = false
-        for (index, _)in stressSignArray[stressLevel.rawValue].enumerated(){
-            if isStress[index] {
+        
+        for i in (stressSignIndex[stressLevel]!.0)..<(stressSignIndex[stressLevel]!.1){
+            if stressCheckResult[i].isExistStress {
                 isCopingNeeded = true
             }
         }
+        
         if isCopingNeeded{
             button.setTitle("次へ", for: .normal)
         }

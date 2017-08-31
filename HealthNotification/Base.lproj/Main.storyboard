@@ -21,17 +21,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Stress Care" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A1c-c8-dcz">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Stress Care" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A1c-c8-dcz">
                                 <rect key="frame" x="0.0" y="211" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="-ストレスケア-" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D0C-wj-ZEg">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="-ストレスケア-" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D0C-wj-ZEg">
                                 <rect key="frame" x="0.0" y="263" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -64,6 +64,10 @@
                                     <action selector="cbtEvent:" destination="NJJ-wR-Xsy" eventType="touchUpInside" id="Ifu-c5-Fr9"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ship" translatesAutoresizingMaskIntoConstraints="NO" id="SA9-Zn-4bx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -115,12 +119,12 @@
                                     <outlet property="delegate" destination="InL-bZ-Vpg" id="gTZ-a0-9Ea"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOi-Va-yzE">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOi-Va-yzE" userLabel="NextButton">
                                 <rect key="frame" x="215" y="610" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="次へ"/>
                                 <connections>
-                                    <action selector="TouchButtonWithSender:" destination="InL-bZ-Vpg" eventType="touchUpInside" id="Dad-aC-Jqu"/>
+                                    <action selector="nextEventWithSender:" destination="InL-bZ-Vpg" eventType="touchUpInside" id="vRt-jP-wnH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ストレスサイン:強" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2L-ti-S4B">
@@ -139,6 +143,14 @@
                                     <action selector="backEvent:" destination="InL-bZ-Vpg" eventType="touchUpInside" id="sxg-km-XLi"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VO7-P6-FT1" userLabel="Sendbutton">
+                                <rect key="frame" x="320" y="610" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="送信"/>
+                                <connections>
+                                    <action selector="sendMailEvent:" destination="InL-bZ-Vpg" eventType="touchUpInside" id="mXe-43-cc0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -146,6 +158,7 @@
                     <connections>
                         <outlet property="backbutton" destination="Ech-NB-hrm" id="IJY-eJ-LYl"/>
                         <outlet property="button" destination="xOi-Va-yzE" id="CyI-JJ-nYs"/>
+                        <outlet property="sendbutton" destination="VO7-P6-FT1" id="0g1-1j-X5F"/>
                         <outlet property="stressSignTypeLabel" destination="g2L-ti-S4B" id="ZLn-Od-QWS"/>
                         <outlet property="table" destination="k4c-IS-Tcv" id="Mau-z6-C5f"/>
                         <segue destination="Fhv-ap-KR4" kind="show" identifier="stressCoping" id="6if-PM-Wnv"/>
@@ -154,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFu-Pd-ek8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-58" y="203"/>
+            <point key="canvasLocation" x="-58.399999999999999" y="202.84857571214394"/>
         </scene>
         <!--Config View Controller-->
         <scene sceneID="SVI-oP-kvZ">
@@ -227,7 +240,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="設定"/>
                                 <connections>
-                                    <action selector="TouchButtonWithSender:" destination="mgb-36-NHi" eventType="touchUpInside" id="bWO-52-MMf"/>
+                                    <action selector="configSetEventWithSender:" destination="mgb-36-NHi" eventType="touchUpInside" id="a1q-Vb-JbM"/>
                                     <segue destination="NJJ-wR-Xsy" kind="show" identifier="top" id="sUJ-zE-D4O"/>
                                 </connections>
                             </button>
@@ -235,6 +248,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="datepicker" destination="g8f-MD-yNv" id="hvI-1u-EdI"/>
                         <outlet property="table" destination="e92-p9-99R" id="iza-xb-78D"/>
                     </connections>
                 </viewController>
@@ -305,6 +319,15 @@
                                 <connections>
                                     <action selector="backEvent:" destination="Fhv-ap-KR4" eventType="touchUpInside" id="TON-Sr-0ZT"/>
                                     <action selector="backEvent:" destination="7OJ-pQ-rb7" eventType="touchUpInside" id="uiC-CP-a1Z"/>
+                                    <segue destination="InL-bZ-Vpg" kind="show" identifier="signview" id="ORK-91-TeZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="weG-8j-Izv">
+                                <rect key="frame" x="320" y="610" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="送信"/>
+                                <connections>
+                                    <action selector="SendMailButton:" destination="Fhv-ap-KR4" eventType="touchUpInside" id="hfs-jb-LYd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -316,7 +339,6 @@
                         <outlet property="table" destination="z9p-O6-3Ig" id="vYx-GW-oEf"/>
                         <segue destination="NJJ-wR-Xsy" kind="show" identifier="top" id="Ks4-8L-x1b"/>
                         <segue destination="7OJ-pQ-rb7" kind="show" identifier="cbt" id="RkX-Hw-WtH"/>
-                        <segue destination="InL-bZ-Vpg" kind="show" identifier="signview" id="Qx3-bn-iUi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pc7-UH-KZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -397,10 +419,13 @@
             <point key="canvasLocation" x="885.60000000000002" y="924.28785607196414"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ship" width="1728" height="2592"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mFn-fb-Gub"/>
-        <segue reference="sUJ-zE-D4O"/>
-        <segue reference="vE0-Da-EcL"/>
-        <segue reference="YGw-Lm-k7Q"/>
+        <segue reference="RkX-Hw-WtH"/>
+        <segue reference="6if-PM-Wnv"/>
+        <segue reference="ORK-91-TeZ"/>
+        <segue reference="Ks4-8L-x1b"/>
     </inferredMetricsTieBreakers>
 </document>
