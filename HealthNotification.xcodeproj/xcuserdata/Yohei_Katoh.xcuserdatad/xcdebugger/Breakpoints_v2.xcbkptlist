@@ -183,7 +183,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/SignViewController.swift"
-            timestampString = "525745433.868172"
+            timestampString = "527397519.052959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "211"
@@ -199,7 +199,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/SignViewController.swift"
-            timestampString = "525745433.868172"
+            timestampString = "527397519.052959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "208"
@@ -231,11 +231,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/CopingViewController.swift"
-            timestampString = "525829589.448388"
+            timestampString = "526379627.057697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -247,11 +247,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/CopingViewController.swift"
-            timestampString = "525829589.448388"
+            timestampString = "526379627.057697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -263,11 +263,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/CopingViewController.swift"
-            timestampString = "525829589.448388"
+            timestampString = "526379627.057697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "numberOfSections(in:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -279,11 +279,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/CopingViewController.swift"
-            timestampString = "525829589.448388"
+            timestampString = "526379627.057697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "tableView(_:titleForHeaderInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -295,7 +295,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/SignViewController.swift"
-            timestampString = "525745433.868172"
+            timestampString = "527397519.052959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "212"
@@ -311,7 +311,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/SignViewController.swift"
-            timestampString = "525745433.868172"
+            timestampString = "527397519.052959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "161"
@@ -327,7 +327,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/SignViewController.swift"
-            timestampString = "525745433.868172"
+            timestampString = "527397519.052959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "177"
@@ -375,11 +375,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/CopingViewController.swift"
-            timestampString = "525829589.448388"
+            timestampString = "526379627.057697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -391,11 +391,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/CopingViewController.swift"
-            timestampString = "525829589.448388"
+            timestampString = "526379627.057697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -407,11 +407,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/CopingViewController.swift"
-            timestampString = "525829589.448388"
+            timestampString = "526379627.057697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -453,11 +453,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/CopingViewController.swift"
-            timestampString = "525829589.448388"
+            timestampString = "526379627.057697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -469,11 +469,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/CopingViewController.swift"
-            timestampString = "525745654.353925"
+            timestampString = "526379627.057697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "backEvent(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -629,7 +629,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/SignViewController.swift"
-            timestampString = "525745433.868172"
+            timestampString = "527397519.052959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "160"
@@ -645,7 +645,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/SignViewController.swift"
-            timestampString = "525745433.868172"
+            timestampString = "527397519.052959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "186"
@@ -661,7 +661,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/SignViewController.swift"
-            timestampString = "525745433.868172"
+            timestampString = "527397519.052959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "186"
@@ -677,7 +677,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/SignViewController.swift"
-            timestampString = "525744833.391758"
+            timestampString = "527397519.052959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
@@ -693,7 +693,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/SignViewController.swift"
-            timestampString = "525745433.868172"
+            timestampString = "527397519.052959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "137"
@@ -709,7 +709,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/SignViewController.swift"
-            timestampString = "525744833.391758"
+            timestampString = "527397519.052959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -725,7 +725,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/SignViewController.swift"
-            timestampString = "525745433.868172"
+            timestampString = "527397519.052959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "118"
@@ -741,7 +741,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/SignViewController.swift"
-            timestampString = "525745433.868172"
+            timestampString = "527397519.052959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "169"
@@ -757,7 +757,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/SignViewController.swift"
-            timestampString = "525745191.966393"
+            timestampString = "527397519.052959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
@@ -773,7 +773,39 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/CopingViewController.swift"
-            timestampString = "525827511.227232"
+            timestampString = "526379627.057697"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "backEvent(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthNotification/CopingViewController.swift"
+            timestampString = "526379627.057697"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "backEvent(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthNotification/CopingViewController.swift"
+            timestampString = "526379627.057697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -789,7 +821,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/CopingViewController.swift"
-            timestampString = "525827676.777683"
+            timestampString = "526379627.057697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
@@ -805,43 +837,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/CopingViewController.swift"
-            timestampString = "525827730.370832"
+            timestampString = "526379627.057697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "backEvent(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HealthNotification/CopingViewController.swift"
-            timestampString = "525827731.846595"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "backEvent(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HealthNotification/CopingViewController.swift"
-            timestampString = "525830165.44385"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "235"
-            endingLineNumber = "235"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -853,7 +853,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/SignViewController.swift"
-            timestampString = "525830496.110797"
+            timestampString = "527397519.052959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "148"
@@ -869,12 +869,140 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthNotification/SignViewController.swift"
-            timestampString = "525830546.47104"
+            timestampString = "527397519.052959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "156"
             endingLineNumber = "156"
             landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthNotification/CommonDefinition.swift"
+            timestampString = "527397519.052959"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "StressCheckItem"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthNotification/SignViewController.swift"
+            timestampString = "527397519.052959"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthNotification/SignViewController.swift"
+            timestampString = "527397519.052959"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthNotification/SignViewController.swift"
+            timestampString = "527397519.052959"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthNotification/ChartViewController.swift"
+            timestampString = "527406247.41513"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "setResetStressCheckFreqTimer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthNotification/ChartViewController.swift"
+            timestampString = "527406247.41513"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "setResetStressCheckFreqTimer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthNotification/RefreshViewController.swift"
+            timestampString = "527406247.41513"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthNotification/RefreshViewController.swift"
+            timestampString = "527397851.549202"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "endEvent(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

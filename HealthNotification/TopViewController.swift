@@ -23,6 +23,16 @@ class TopViewController: UIViewController{
         performSegue(withIdentifier: "config",sender: nil)
     }
 
+    
+    @IBAction func chartViewEvent(_ sender: Any) {
+        performSegue(withIdentifier: "stresschart",sender: nil)
+    }
+    
+    @IBAction func refreshEvent(_ sender: Any) {
+        performSegue(withIdentifier: "refresh",sender: nil)
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == "signview"){
             let viewController: SignViewController = (segue.destination as? SignViewController)!

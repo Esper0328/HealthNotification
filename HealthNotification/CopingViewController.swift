@@ -15,7 +15,8 @@ class CopingViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet var button: UIButton!
 
     @IBOutlet weak var stressCopingTypeLabel: UILabel!
-    @IBAction func TouchButton(sender: AnyObject) {
+    @IBAction func finishEvent(sender: AnyObject) {
+        updateStatistics()
         performSegue(withIdentifier: "top",sender: nil)
     }
     
@@ -34,6 +35,14 @@ class CopingViewController: UIViewController, UITableViewDataSource, UITableView
     func resetIsExistStressSign(level: StressSignLevel){
         for i in (stressSignIndex[level]!.0)..<(stressSignIndex[level]!.1){
             stressCheckResult[i].isExistStress = false
+        }
+    }
+    
+    func updateStatistics(){
+        for i in (strongSignStart..<weakSignEnd){
+            if(stressCheckResult[i].isExistStress){
+                stressCheckResult[i].freq += 1.0
+            }
         }
     }
     

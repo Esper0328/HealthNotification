@@ -179,7 +179,7 @@ class SignViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         else {
             cell?.accessoryType = UITableViewCellAccessoryType.none
-            stressCheckResult[stressSignIndex[stressLevel]!.0 + indexPath.count].isExistStress = false
+            stressCheckResult[stressSignIndex[stressLevel]!.0 + indexPath.row].isExistStress = false
         }
         isCopingNeeded = false
         

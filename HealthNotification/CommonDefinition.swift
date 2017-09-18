@@ -8,6 +8,34 @@
 
 import Foundation
 
+enum RefreshId: Int {
+    case GoOut
+    case Neck
+    case Back
+    case LowBack
+    case Dummy
+    static let count = Dummy.rawValue
+}
+
+struct RefreshCheckItem {
+    var id: RefreshId
+    var isRefreshDone: Bool
+    var freq: Double
+    
+    init(id: RefreshId, isRefreshDone: Bool){
+        self.id = id
+        self.isRefreshDone = isRefreshDone
+        self.freq = 0.0
+    }
+}
+
+var refreshCheckResult: [RefreshCheckItem] =
+    [RefreshCheckItem(id: .GoOut, isRefreshDone: false),
+     RefreshCheckItem(id: .Neck, isRefreshDone: false),
+     RefreshCheckItem(id: .Back, isRefreshDone: false),
+     RefreshCheckItem(id: .LowBack, isRefreshDone: false)
+]
+
 enum StressSignLevel: Int{
     case Strong
     case Mid
@@ -15,7 +43,7 @@ enum StressSignLevel: Int{
 }
 
 enum StressSignId: Int {
-    case Jinmashin /*Strong Stress Sign*/
+    case Jinmashin  /*Strong Stress Sign*/
     case Tears
     case Suicide
     case CannotDoAny
@@ -46,13 +74,13 @@ struct StressCheckItem {
     var level: StressSignLevel
     var id: StressSignId
     var isExistStress: Bool
-    var freq: uint
+    var freq: Double
     
     init(level: StressSignLevel, id: StressSignId, isExistStress: Bool){
         self.level = level
         self.id = id
         self.isExistStress = isExistStress
-        self.freq = 0
+        self.freq = 0.0
     }
 }
 
@@ -70,7 +98,7 @@ var stressCheckResult: [StressCheckItem] =
      StressCheckItem(level: .Mid, id: .Silent, isExistStress: false),
      StressCheckItem(level: .Mid, id: .BadLook, isExistStress: false),
      StressCheckItem(level: .Mid, id: .Frustrated, isExistStress: false),
-     StressCheckItem(level: .Weak, id: .Tired, isExistStress: false),
+     StressCheckItem(level: .Mid, id: .Tired, isExistStress: false),
      StressCheckItem(level: .Mid, id: .StrongStiffNeck, isExistStress: false),
      StressCheckItem(level: .Mid, id: .CarelessMiss, isExistStress: false),
      StressCheckItem(level: .Mid, id: .AvoidCommunication, isExistStress: false),
@@ -81,6 +109,8 @@ var stressCheckResult: [StressCheckItem] =
      StressCheckItem(level: .Weak, id: .Drink, isExistStress: false),
      StressCheckItem(level: .Weak, id: .RepeatSame, isExistStress: false)
 ]
+
+
 
 let stressSignList: [StressSignLevel: [StressSignId]] =
     [.Strong:[.Jinmashin, .Tears, .Suicide, .CannotDoAny],
@@ -114,6 +144,7 @@ func saveStressCheckResult(){
         }
     }
 }
+
 
 func addCheckResult(level : StressSignLevel) -> String {
     var str: String = ""

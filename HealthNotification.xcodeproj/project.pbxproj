@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35167F121F6E6CB300705143 /* RefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35167F111F6E6CB300705143 /* RefreshViewController.swift */; };
+		35167F141F6F837A00705143 /* RefreshChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35167F131F6F837A00705143 /* RefreshChartViewController.swift */; };
 		3552BDE31F262A21009D9BB4 /* CopingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3552BDE21F262A21009D9BB4 /* CopingViewController.swift */; };
 		356E3D441F25F68300844D7A /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356E3D431F25F68300844D7A /* SignViewController.swift */; };
 		357B3DC51F24936800DA6EA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357B3DC41F24936800DA6EA2 /* AppDelegate.swift */; };
@@ -20,9 +22,12 @@
 		358A0DFB1F3A8E280080BB10 /* CBT2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 358A0DFA1F3A8E280080BB10 /* CBT2.pdf */; };
 		359D44DA1F5298A4006AB494 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359D44D91F5298A4006AB494 /* MessageUI.framework */; };
 		359D44DC1F54DAAF006AB494 /* CommonDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D44DB1F54DAAF006AB494 /* CommonDefinition.swift */; };
-		359D44DE1F54DC9A006AB494 /* MailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D44DD1F54DC9A006AB494 /* MailViewController.swift */; };
 		359D44E01F578C6D006AB494 /* CBTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D44DF1F578C6D006AB494 /* CBTViewController.swift */; };
 		35A056391F3145EA0053A9D0 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A056381F3145EA0053A9D0 /* ConfigViewController.swift */; };
+		35A6E95B1F5E24EB008A4B52 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359D44E11F5AB644006AB494 /* Realm.framework */; };
+		35A6E95E1F5E24ED008A4B52 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A6E95C1F5E24ED008A4B52 /* Charts.framework */; };
+		35A6E95F1F5E24ED008A4B52 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A6E95D1F5E24ED008A4B52 /* RealmSwift.framework */; };
+		35A6E9611F5E26B9008A4B52 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A6E9601F5E26B9008A4B52 /* ChartViewController.swift */; };
 		35FA53111F36053700D14724 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FA53101F36053700D14724 /* TopViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		35167F111F6E6CB300705143 /* RefreshViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshViewController.swift; sourceTree = "<group>"; };
+		35167F131F6F837A00705143 /* RefreshChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshChartViewController.swift; sourceTree = "<group>"; };
+		351C77AC1F5ABE4300DD08A1 /* Build */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Build; path = Carthage/Build; sourceTree = "<group>"; };
 		3552BDE21F262A21009D9BB4 /* CopingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CopingViewController.swift; sourceTree = "<group>"; };
 		356E3D431F25F68300844D7A /* SignViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignViewController.swift; sourceTree = "<group>"; };
 		357B3DC11F24936800DA6EA2 /* HealthNotification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthNotification.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,9 +71,12 @@
 		358A0DFA1F3A8E280080BB10 /* CBT2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = CBT2.pdf; path = ../../../Desktop/CBT/CBT2.pdf; sourceTree = "<group>"; };
 		359D44D91F5298A4006AB494 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		359D44DB1F54DAAF006AB494 /* CommonDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDefinition.swift; sourceTree = "<group>"; };
-		359D44DD1F54DC9A006AB494 /* MailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailViewController.swift; sourceTree = "<group>"; };
 		359D44DF1F578C6D006AB494 /* CBTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBTViewController.swift; sourceTree = "<group>"; };
+		359D44E11F5AB644006AB494 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		35A056381F3145EA0053A9D0 /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
+		35A6E95C1F5E24ED008A4B52 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
+		35A6E95D1F5E24ED008A4B52 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		35A6E9601F5E26B9008A4B52 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		35FA53101F36053700D14724 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +85,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35A6E95E1F5E24ED008A4B52 /* Charts.framework in Frameworks */,
+				35A6E95F1F5E24ED008A4B52 /* RealmSwift.framework in Frameworks */,
+				35A6E95B1F5E24EB008A4B52 /* Realm.framework in Frameworks */,
 				359D44DA1F5298A4006AB494 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,11 +139,13 @@
 				359D44DF1F578C6D006AB494 /* CBTViewController.swift */,
 				357B3DC41F24936800DA6EA2 /* AppDelegate.swift */,
 				357B3DC81F24936800DA6EA2 /* Main.storyboard */,
+				35167F131F6F837A00705143 /* RefreshChartViewController.swift */,
+				35A6E9601F5E26B9008A4B52 /* ChartViewController.swift */,
 				35FA53101F36053700D14724 /* TopViewController.swift */,
 				35A056381F3145EA0053A9D0 /* ConfigViewController.swift */,
 				356E3D431F25F68300844D7A /* SignViewController.swift */,
 				359D44DB1F54DAAF006AB494 /* CommonDefinition.swift */,
-				359D44DD1F54DC9A006AB494 /* MailViewController.swift */,
+				35167F111F6E6CB300705143 /* RefreshViewController.swift */,
 				357B3DCB1F24936800DA6EA2 /* Assets.xcassets */,
 				357B3DCD1F24936800DA6EA2 /* LaunchScreen.storyboard */,
 				357B3DD01F24936800DA6EA2 /* Info.plist */,
@@ -159,6 +175,10 @@
 		359D44D81F5298A4006AB494 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				35A6E95C1F5E24ED008A4B52 /* Charts.framework */,
+				35A6E95D1F5E24ED008A4B52 /* RealmSwift.framework */,
+				351C77AC1F5ABE4300DD08A1 /* Build */,
+				359D44E11F5AB644006AB494 /* Realm.framework */,
 				359D44D91F5298A4006AB494 /* MessageUI.framework */,
 			);
 			name = Frameworks;
@@ -174,6 +194,7 @@
 				357B3DBD1F24936800DA6EA2 /* Sources */,
 				357B3DBE1F24936800DA6EA2 /* Frameworks */,
 				357B3DBF1F24936800DA6EA2 /* Resources */,
+				359D44E31F5AB700006AB494 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -297,17 +318,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		359D44E31F5AB700006AB494 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Charts.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		357B3DBD1F24936800DA6EA2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35167F141F6F837A00705143 /* RefreshChartViewController.swift in Sources */,
 				359D44DC1F54DAAF006AB494 /* CommonDefinition.swift in Sources */,
 				356E3D441F25F68300844D7A /* SignViewController.swift in Sources */,
 				357B3DC51F24936800DA6EA2 /* AppDelegate.swift in Sources */,
 				35A056391F3145EA0053A9D0 /* ConfigViewController.swift in Sources */,
+				35167F121F6E6CB300705143 /* RefreshViewController.swift in Sources */,
 				359D44E01F578C6D006AB494 /* CBTViewController.swift in Sources */,
-				359D44DE1F54DC9A006AB494 /* MailViewController.swift in Sources */,
+				35A6E9611F5E26B9008A4B52 /* ChartViewController.swift in Sources */,
 				3552BDE31F262A21009D9BB4 /* CopingViewController.swift in Sources */,
 				35FA53111F36053700D14724 /* TopViewController.swift in Sources */,
 			);
@@ -464,6 +506,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7J672TXVNA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = HealthNotification/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = esper.HealthNotification;
@@ -477,6 +523,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7J672TXVNA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = HealthNotification/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = esper.HealthNotification;
