@@ -66,7 +66,7 @@ class RefreshChartViewController: UIViewController{
         timer = Timer.scheduledTimer(timeInterval: TimeInterval(next_time_interval), target: self, selector: #selector(self.notifyTimeout), userInfo: nil, repeats: false)
     }
     
-    func notifyTimeout(){
+    @objc func notifyTimeout(){
         resetRefreshCheckFreq()
         setResetRefreshCheckFreqTimer()
         check_count = 0
