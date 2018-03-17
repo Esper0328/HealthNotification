@@ -39,64 +39,71 @@
                                 <rect key="frame" x="140" y="577" width="95" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="設定"/>
+                                <state key="normal" title="通知設定"/>
                                 <connections>
                                     <action selector="configEvent:" destination="NJJ-wR-Xsy" eventType="touchUpInside" id="fcg-da-n6v"/>
                                     <segue destination="mgb-36-NHi" kind="show" identifier="config" id="awS-Wl-csS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hDB-9Z-tDU">
-                                <rect key="frame" x="125" y="432" width="125" height="60"/>
+                                <rect key="frame" x="116" y="432" width="143" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal">
-                                    <string key="title">ストレス
-チェック</string>
-                                </state>
+                                <state key="normal" title="ストレスサイン"/>
                                 <connections>
                                     <action selector="stressCheckEvent:" destination="NJJ-wR-Xsy" eventType="touchUpInside" id="2aX-vO-aWP"/>
                                     <segue destination="InL-bZ-Vpg" kind="show" identifier="signview" id="mFn-fb-Gub"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwk-RI-ziF">
-                                <rect key="frame" x="111" y="530" width="152" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Pwk-RI-ziF">
+                                <rect key="frame" x="0.0" y="500" width="125" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="認知行動療法"/>
+                                <state key="normal" title="CBT"/>
                                 <connections>
                                     <action selector="cbtEvent:" destination="NJJ-wR-Xsy" eventType="touchUpInside" id="Ifu-c5-Fr9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="WrO-pr-MLX">
+                                <rect key="frame" x="250" y="500" width="125" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="睡眠負債"/>
+                                <connections>
+                                    <action selector="cbtEvent:" destination="NJJ-wR-Xsy" eventType="touchUpInside" id="rfx-D6-NjE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ghf-ms-WyT">
+                                <rect key="frame" x="125" y="500" width="125" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="起床就寝"/>
+                                <connections>
+                                    <action selector="cbtEvent:" destination="NJJ-wR-Xsy" eventType="touchUpInside" id="NBQ-6n-xZX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Ewc-Da-W97">
                                 <rect key="frame" x="0.0" y="432" width="125" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal">
-                                    <string key="title">気分転換
-チェック</string>
-                                </state>
-                                <string key="userLabel">気分転換
-チェック</string>
+                                <state key="normal" title="気分転換"/>
                                 <connections>
                                     <action selector="refreshEvent:" destination="NJJ-wR-Xsy" eventType="touchUpInside" id="otV-TQ-3md"/>
                                     <segue destination="Njp-G8-sTu" kind="show" identifier="refresh" id="Xko-1Y-Gwe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="IQV-GQ-G3b" userLabel="経過観察 チェック">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="IQV-GQ-G3b" userLabel="経過観察">
                                 <rect key="frame" x="250" y="432" width="125" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal">
-                                    <string key="title">経過観察
-チェック</string>
-                                </state>
+                                <state key="normal" title="経過図"/>
                                 <connections>
                                     <action selector="chartViewEvent:" destination="NJJ-wR-Xsy" eventType="touchUpInside" id="BlX-XT-4IS"/>
                                     <segue destination="A8u-yB-H05" kind="show" identifier="stresschart" id="yyc-oG-hdu"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ship" translatesAutoresizingMaskIntoConstraints="NO" id="lBg-jj-Xjc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ship" translatesAutoresizingMaskIntoConstraints="NO" id="Xzr-Gh-YsY">
+                                <rect key="frame" x="25" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -636,6 +643,6 @@
         <segue reference="vE0-Da-EcL"/>
         <segue reference="6if-PM-Wnv"/>
         <segue reference="mFn-fb-Gub"/>
-        <segue reference="37H-72-5ve"/>
+        <segue reference="iBn-nI-SPH"/>
     </inferredMetricsTieBreakers>
 </document>
