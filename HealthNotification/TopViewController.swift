@@ -32,6 +32,9 @@ class TopViewController: UIViewController{
         performSegue(withIdentifier: "refresh",sender: nil)
     }
     
+    @IBAction func inputBedtimeEvent(_ sender: Any) {
+        performSegue(withIdentifier: "inputBedtime",sender: nil)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == "signview"){
