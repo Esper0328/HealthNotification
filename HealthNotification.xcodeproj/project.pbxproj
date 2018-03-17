@@ -26,6 +26,8 @@
 		35A056391F3145EA0053A9D0 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A056381F3145EA0053A9D0 /* ConfigViewController.swift */; };
 		35A6E95E1F5E24ED008A4B52 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A6E95C1F5E24ED008A4B52 /* Charts.framework */; };
 		35A6E9611F5E26B9008A4B52 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A6E9601F5E26B9008A4B52 /* ChartViewController.swift */; };
+		35B261E8205CF77F00D8FB6D /* SleepDebtHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B261E6205CF77E00D8FB6D /* SleepDebtHistoryViewController.swift */; };
+		35B261E9205CF77F00D8FB6D /* BedtimeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B261E7205CF77F00D8FB6D /* BedtimeInputViewController.swift */; };
 		35FA53111F36053700D14724 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FA53101F36053700D14724 /* TopViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +75,8 @@
 		35A056381F3145EA0053A9D0 /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		35A6E95C1F5E24ED008A4B52 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
 		35A6E9601F5E26B9008A4B52 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		35B261E6205CF77E00D8FB6D /* SleepDebtHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepDebtHistoryViewController.swift; sourceTree = "<group>"; };
+		35B261E7205CF77F00D8FB6D /* BedtimeInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BedtimeInputViewController.swift; sourceTree = "<group>"; };
 		35FA53101F36053700D14724 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,6 +144,8 @@
 				356E3D431F25F68300844D7A /* SignViewController.swift */,
 				359D44DB1F54DAAF006AB494 /* CommonDefinition.swift */,
 				35167F111F6E6CB300705143 /* RefreshViewController.swift */,
+				35B261E7205CF77F00D8FB6D /* BedtimeInputViewController.swift */,
+				35B261E6205CF77E00D8FB6D /* SleepDebtHistoryViewController.swift */,
 				357B3DCB1F24936800DA6EA2 /* Assets.xcassets */,
 				357B3DCD1F24936800DA6EA2 /* LaunchScreen.storyboard */,
 				357B3DD01F24936800DA6EA2 /* Info.plist */,
@@ -335,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35B261E9205CF77F00D8FB6D /* BedtimeInputViewController.swift in Sources */,
 				35167F141F6F837A00705143 /* RefreshChartViewController.swift in Sources */,
 				359D44DC1F54DAAF006AB494 /* CommonDefinition.swift in Sources */,
 				356E3D441F25F68300844D7A /* SignViewController.swift in Sources */,
@@ -342,6 +349,7 @@
 				35A056391F3145EA0053A9D0 /* ConfigViewController.swift in Sources */,
 				35167F121F6E6CB300705143 /* RefreshViewController.swift in Sources */,
 				359D44E01F578C6D006AB494 /* CBTViewController.swift in Sources */,
+				35B261E8205CF77F00D8FB6D /* SleepDebtHistoryViewController.swift in Sources */,
 				35A6E9611F5E26B9008A4B52 /* ChartViewController.swift in Sources */,
 				3552BDE31F262A21009D9BB4 /* CopingViewController.swift in Sources */,
 				35FA53111F36053700D14724 /* TopViewController.swift in Sources */,
