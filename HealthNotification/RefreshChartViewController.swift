@@ -15,19 +15,29 @@ class RefreshChartViewController: UIViewController{
         performSegue(withIdentifier: "top", sender: nil)
     }
 
+    @IBOutlet weak var chartTitle: UILabel!
     @IBOutlet weak var chartview: BarChartView!
-    /*
+    
     let days_per_week = 7
     let hours_per_day = 24
     let minutes_per_hour = 60
     let seconds_per_minute = 60
     
     var timer: Timer!
-    */
+    let check_thresh: Int = 7
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // y軸のプロットデータ
         readyForChart()
+        check_count += 1
+        if(check_count > check_thresh){
+            chartTitle.text = "明日もリフレッシュしていきましょう！"
+        }else{
+            chartTitle.text = "1日のリフレッシュチェック" + String(check_count) + "回目"
+        }
+        
+        
     }
     
     func readyForChart(){
@@ -40,35 +50,31 @@ class RefreshChartViewController: UIViewController{
         setChart(y: freqOfRefreshCheck, chartview: chartview)
     }
     
-    
-    /*
-    func setResetStressCheckFreqTimer(){
+    func setResetRefreshCheckFreqTimer(){
         let date = Date()
         let calendar = Calendar.current
-        let components = calendar.dateComponents([.day, .hour, .minute, .second, .weekday], from: date)
+        let components = calendar.dateComponents([.day, .hour, .minute, .second], from: date)
         
-        let next_time_interval_day : Int = (days_per_week + 1 - (components.weekday!)) % days_per_week
         let next_time_interval_hour : Int = hours_per_day - (components.hour!) - 1
         let next_time_interval_minute : Int = minutes_per_hour - (components.minute!) - 1
         let next_time_interval_seconds : Int = seconds_per_minute - (components.second!)
         let next_time_interval : UInt32
-            = UInt32(hours_per_day * next_time_interval_day * minutes_per_hour * seconds_per_minute)
-                + UInt32(minutes_per_hour * seconds_per_minute * next_time_interval_hour)
+            = UInt32(minutes_per_hour * seconds_per_minute * next_time_interval_hour)
                 + UInt32(seconds_per_minute * next_time_interval_minute)
                 + UInt32(next_time_interval_seconds)
         
         timer = Timer.scheduledTimer(timeInterval: TimeInterval(next_time_interval), target: self, selector: #selector(self.notifyTimeout), userInfo: nil, repeats: false)
     }
- */
     
     func notifyTimeout(){
-        resetStressCheckFreq()
-        //setResetStressCheckFreqTimer()
+        resetRefreshCheckFreq()
+        setResetRefreshCheckFreqTimer()
+        check_count = 0
     }
     
-    func resetStressCheckFreq(){
+    func resetRefreshCheckFreq(){
         for i in 0..<stressCheckResult.count {
-            stressCheckResult[i].freq = 0
+            refreshCheckResult[i].freq = 0
         }
     }
     
@@ -86,7 +92,7 @@ class RefreshChartViewController: UIViewController{
         let xaxis = XAxis()
         xaxis.valueFormatter = RefreshCheckBarChartFormatter()
         chartview.xAxis.labelCount = RefreshCheckBarChartFormatter().getNumberOfSign()
-        chartDataSet.colors = [UIColor(red: 0, green: 0/255, blue: 140/255, alpha: 1)]
+        chartDataSet.colors = [UIColor(red: 0, green: 30/255, blue: 200/255, alpha: 1)]
         chartDataSet.label = "実施回数"
         chartview.xAxis.valueFormatter = xaxis.valueFormatter
         chartview.xAxis.labelPosition = .bottom
@@ -97,7 +103,7 @@ class RefreshChartViewController: UIViewController{
         // グラフの棒をニョキッとアニメーションさせる
         chartview.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
         // 横に赤いボーダーラインを描く
-        let ll = ChartLimitLine(limit: 7.0)
+        let ll = ChartLimitLine(limit: Double(check_thresh))
         chartview.leftAxis.addLimitLine(ll)
         chartview.pinchZoomEnabled = false
         chartview.rightAxis.enabled = false

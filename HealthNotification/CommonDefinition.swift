@@ -156,3 +156,5 @@ func addCheckResult(level : StressSignLevel) -> String {
     str += "\n"
     return str
 }
+
+var check_count : Int = 0
