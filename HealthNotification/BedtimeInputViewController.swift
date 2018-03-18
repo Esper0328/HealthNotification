@@ -60,7 +60,7 @@ class BedtimeInputViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-/*        inputModeLabel.text = inputModeContents[sleepInputMode]?.label
+        inputModeLabel.text = inputModeContents[sleepInputMode]?.label
         datepicker.datePickerMode = (inputModeContents[sleepInputMode]?.datePickerMode)!
         let date = Date()
         datepicker.maximumDate = date
@@ -71,7 +71,7 @@ class BedtimeInputViewController: UIViewController {
         timeOfSleepLabel.textColor = UIColor.blue
         wakeTimeLabel.textColor = UIColor.black
         let userDefaults = UserDefaults.standard
-        sleepDebt = userDefaults.double(forKey: "sleepDebt")*/
+        sleepDebt = userDefaults.double(forKey: "sleepDebt")
         // Do any additional setup after loading the view, typically from a nib.
     }
     

@@ -104,6 +104,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="EvV-9N-YGa"/>
                     <connections>
+                        <outlet property="cbtButton" destination="gtU-1p-Fhu" id="cuy-oW-Io0"/>
+                        <outlet property="chartViewButton" destination="cMR-er-MdG" id="uVc-9f-PNx"/>
+                        <outlet property="configButton" destination="ypO-E4-diB" id="eQF-ho-o8l"/>
+                        <outlet property="inputBedtimeButton" destination="TzE-HS-5pA" id="tLi-LF-quF"/>
+                        <outlet property="refreshButton" destination="dtr-gf-lFX" id="rsH-A9-1Co"/>
+                        <outlet property="sleepDebtButton" destination="lc6-6i-7h1" id="6et-gk-Mng"/>
+                        <outlet property="stressCheckButton" destination="oLl-qH-40d" id="1dA-D6-Saa"/>
                         <segue destination="7OJ-pQ-rb7" kind="show" identifier="cbt" id="vE0-Da-EcL"/>
                         <segue destination="InL-bZ-Vpg" kind="show" identifier="signview" id="Geh-jh-hvO"/>
                         <segue destination="A8u-yB-H05" kind="show" identifier="stresschart" id="ycC-uz-rbj"/>
@@ -143,12 +150,15 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="AccessibilityIdentifier" value="bedtimeDatePicker"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="changeDate:" destination="QfQ-FP-1BM" eventType="valueChanged" id="Gi6-ie-OOK"/>
+                                </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="起床時間" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0NH-Jt-aiT" userLabel="WakeTimeLabel">
-                                <rect key="frame" x="204" y="330" width="93" height="28"/>
+                                <rect key="frame" x="204" y="330" width="96" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" identifier="wakeTimeLabel"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -174,6 +184,9 @@
                                 <accessibility key="accessibilityConfiguration" identifier="backToTopFromBedtimeInput"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backToTopViewEvent:" destination="QfQ-FP-1BM" eventType="touchUpInside" id="ytL-1J-Onh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asV-BY-iSr">
                                 <rect key="frame" x="240" y="589" width="30" height="30"/>
@@ -181,14 +194,24 @@
                                 <accessibility key="accessibilityConfiguration" identifier="bedtimeSetButton"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Set"/>
+                                <connections>
+                                    <action selector="setBedtimeEvent:" destination="QfQ-FP-1BM" eventType="touchUpInside" id="1NF-nV-bbr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <connections>
+                        <outlet property="datepicker" destination="kJR-4e-WxG" id="Teo-el-mnq"/>
+                        <outlet property="inputModeLabel" destination="mi0-cO-vwp" id="Ql6-0C-9un"/>
+                        <outlet property="timeOfSleepLabel" destination="6db-cn-afV" id="Qyn-wZ-H46"/>
+                        <outlet property="wakeTimeLabel" destination="0NH-Jt-aiT" id="mk9-Bm-mdF"/>
+                        <segue destination="NJJ-wR-Xsy" kind="show" identifier="backToTopViewFromInput" id="RME-uA-qg7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o4Z-99-Iyz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1905" y="-592"/>
+            <point key="canvasLocation" x="-2082" y="-640"/>
         </scene>
         <!--Sign View Controller-->
         <scene sceneID="epc-l2-yzX">
@@ -278,7 +301,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFu-Pd-ek8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-58" y="224"/>
+            <point key="canvasLocation" x="-23" y="203"/>
         </scene>
         <!--Refresh Chart View Controller-->
         <scene sceneID="mJQ-aA-AJU">
@@ -324,7 +347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rhB-cv-CVr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3034.4000000000001" y="1066.4167916041979"/>
+            <point key="canvasLocation" x="-3479" y="1072"/>
         </scene>
         <!--Refresh View Controller-->
         <scene sceneID="4SQ-Nf-QH0">
@@ -391,7 +414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btx-Kp-nLt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2127.1999999999998" y="1071.8140929535234"/>
+            <point key="canvasLocation" x="-2082" y="1072"/>
         </scene>
         <!--Config View Controller-->
         <scene sceneID="SVI-oP-kvZ">
@@ -415,13 +438,6 @@
                                     <action selector="changeDate:" destination="mgb-36-NHi" eventType="valueChanged" id="hNs-4r-5L5"/>
                                 </connections>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="次回通知設定" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9e-td-peS">
-                                <rect key="frame" x="0.0" y="80" width="375" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e92-p9-99R">
                                 <rect key="frame" x="0.0" y="109" width="375" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -468,6 +484,13 @@
                                     <segue destination="NJJ-wR-Xsy" kind="show" identifier="top" id="sUJ-zE-D4O"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="次回通知設定" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9e-td-peS">
+                                <rect key="frame" x="0.0" y="80" width="375" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -478,7 +501,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Be-aH-ycF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3487" y="159"/>
+            <point key="canvasLocation" x="-3406" y="203"/>
         </scene>
         <!--Chart View Controller-->
         <scene sceneID="lFz-6O-iS0">
@@ -705,7 +728,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GwW-9K-1y7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1305" y="1054"/>
+            <point key="canvasLocation" x="1246" y="-592"/>
         </scene>
     </scenes>
     <resources>
@@ -715,6 +738,6 @@
         <segue reference="vE0-Da-EcL"/>
         <segue reference="6if-PM-Wnv"/>
         <segue reference="Geh-jh-hvO"/>
-        <segue reference="37H-72-5ve"/>
+        <segue reference="RME-uA-qg7"/>
     </inferredMetricsTieBreakers>
 </document>

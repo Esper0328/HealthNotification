@@ -10,6 +10,16 @@ import UIKit
 
 class TopViewController: UIViewController{
 
+    @IBOutlet weak var refreshButton: UIButton!
+    @IBOutlet weak var stressCheckButton: UIButton!
+    @IBOutlet weak var chartViewButton: UIButton!
+    @IBOutlet weak var cbtButton: UIButton!
+    @IBOutlet weak var inputBedtimeButton: UIButton!
+    @IBOutlet weak var sleepDebtButton: UIButton!
+    @IBOutlet weak var configButton: UIButton!
+    
+    var isConfigFinished: Bool = false
+    
     @IBAction func stressCheckEvent(_ sender: Any) {
         performSegue(withIdentifier: "signview", sender: nil)
     }
@@ -20,6 +30,7 @@ class TopViewController: UIViewController{
     
     
     @IBAction func configEvent(_ sender: Any) {
+        UserDefaults.standard.set(true, forKey: "isConfigFinished")
         performSegue(withIdentifier: "config",sender: nil)
     }
 
@@ -45,5 +56,27 @@ class TopViewController: UIViewController{
             let viewController: CBTViewController = (segue.destination as? CBTViewController)!
             viewController.isViewFromTop = true
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        isConfigFinished = UserDefaults.standard.bool(forKey: "isConfigFinished")
+        if isConfigFinished {
+            refreshButton.isEnabled = true
+            stressCheckButton.isEnabled = true
+            chartViewButton.isEnabled = true
+            cbtButton.isEnabled = true
+            inputBedtimeButton.isEnabled = true
+            sleepDebtButton.isEnabled = true
+        }
+        else{
+            refreshButton.isEnabled = false
+            stressCheckButton.isEnabled = false
+            chartViewButton.isEnabled = false
+            cbtButton.isEnabled = false
+            inputBedtimeButton.isEnabled = false
+            sleepDebtButton.isEnabled = false
+        }
+        configButton.isEnabled = true
     }
 }
