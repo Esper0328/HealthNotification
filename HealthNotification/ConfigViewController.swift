@@ -76,10 +76,15 @@ class ConfigViewController: UIViewController, UNUserNotificationCenterDelegate, 
         super.viewDidLoad()
         table.allowsMultipleSelection = false
         self.datepicker.minimumDate = datepicker.date
-        //isConfigFinishedフラグ == false -> backbutton disable
         let isConfigFinished: Bool = UserDefaults.standard.bool(forKey: "isConfigFinished")
+        configSetButton.isEnabled = true
         if isConfigFinished{
-            
+            configResetButton.isEnabled = true
+            backButton.isEnabled = true
+        }
+        else{
+            configResetButton.isEnabled = false
+            backButton.isEnabled = false
         }
     }
     
