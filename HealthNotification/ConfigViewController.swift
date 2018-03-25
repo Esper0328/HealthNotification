@@ -59,7 +59,8 @@ class ConfigViewController: UIViewController, UNUserNotificationCenterDelegate, 
     
     @IBAction func configResetEvent(_ sender: Any) {
         UserDefaults.standard.set(false, forKey: "isConfigFinished")
-        //cancel Notification
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
     }
 
     @IBAction func backEvent(_ sender: Any) {
