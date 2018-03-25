@@ -107,6 +107,7 @@ class BedtimeInputViewController: UIViewController {
             case .WakeTime:
                 wakeTime = changeddate
                 setNotification(dateComponents:dateComponents, content: content)
+                UserDefaults.standard.set(true, forKey: "isConfigFinished")
                 performSegue(withIdentifier: "backToTopViewFromInput", sender: nil)
             }
         case .Result:

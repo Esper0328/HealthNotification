@@ -53,7 +53,7 @@ class ConfigViewController: UIViewController, UNUserNotificationCenterDelegate, 
             //通知を予約
             let center = UNUserNotificationCenter.current()
             center.add(request, withCompletionHandler: nil)
-            UserDefaults.standard.set(true, forKey: "isConfigFinished")
+            
             performSegue(withIdentifier: "planBedtime", sender: nil)
             //Input Viewに遷移->設定終了後isConfigFinishedフラグをTrueに変更
         }
