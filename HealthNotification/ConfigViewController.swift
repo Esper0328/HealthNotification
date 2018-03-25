@@ -17,6 +17,11 @@ class ConfigViewController: UIViewController, UNUserNotificationCenterDelegate, 
         case Onetime
     }
     
+    
+    @IBOutlet weak var configSetButton: UIButton!
+    @IBOutlet weak var configResetButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
+    
     let notificationFrequencyList: NSArray = ["毎日", "毎週","１回だけ"]
 
     @IBOutlet weak var datepicker: UIDatePicker!
@@ -72,7 +77,10 @@ class ConfigViewController: UIViewController, UNUserNotificationCenterDelegate, 
         table.allowsMultipleSelection = false
         self.datepicker.minimumDate = datepicker.date
         //isConfigFinishedフラグ == false -> backbutton disable
-        //let isConfigFinished: Bool = false
+        let isConfigFinished: Bool = UserDefaults.standard.bool(forKey: "isConfigFinished")
+        if isConfigFinished{
+            
+        }
     }
     
     override func didReceiveMemoryWarning() {

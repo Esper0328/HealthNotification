@@ -502,6 +502,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="Kjt-NV-ahd" id="XaU-Yt-dQQ"/>
+                        <outlet property="configResetButton" destination="j63-Nh-U5c" id="Af8-am-1aP"/>
+                        <outlet property="configSetButton" destination="aVT-OA-Vas" id="4hv-PN-AdE"/>
                         <outlet property="datepicker" destination="g8f-MD-yNv" id="hvI-1u-EdI"/>
                         <outlet property="table" destination="e92-p9-99R" id="iza-xb-78D"/>
                     </connections>
