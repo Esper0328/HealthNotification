@@ -53,21 +53,18 @@ class ConfigViewController: UIViewController, UNUserNotificationCenterDelegate, 
             //通知を予約
             let center = UNUserNotificationCenter.current()
             center.add(request, withCompletionHandler: nil)
-            //performSegue(withIdentifier: "top", sender: nil)
+            UserDefaults.standard.set(true, forKey: "isConfigFinished")
+            performSegue(withIdentifier: "planBedtime", sender: nil)
             //Input Viewに遷移->設定終了後isConfigFinishedフラグをTrueに変更
-            
         }
     }
     
-    @IBAction func setEvent(_ sender: Any) {
-        UserDefaults.standard.set(true, forKey: "isConfigFinished")
-    }
-    
-    @IBAction func resetEvent(_ sender: Any) {
+    @IBAction func configResetEvent(_ sender: Any) {
         UserDefaults.standard.set(false, forKey: "isConfigFinished")
     }
+
     @IBAction func backEvent(_ sender: Any) {
-        performSegue(withIdentifier: "top", sender: nil)
+        performSegue(withIdentifier: "backToTop", sender: nil)
     }
     
     override func viewDidLoad() {

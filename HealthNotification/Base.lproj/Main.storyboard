@@ -471,8 +471,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="戻る"/>
                                 <connections>
-                                    <action selector="backEvent:" destination="mgb-36-NHi" eventType="touchUpInside" id="3vw-PR-wbd"/>
-                                    <action selector="backEvent:" destination="7OJ-pQ-rb7" eventType="touchUpInside" id="91l-tV-nSi"/>
+                                    <segue destination="NJJ-wR-Xsy" kind="show" identifier="backToTop" id="3pl-Ad-eQb"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="次回通知設定" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9e-td-peS">
@@ -487,7 +486,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="リセット"/>
                                 <connections>
-                                    <action selector="resetEvent:" destination="mgb-36-NHi" eventType="touchUpInside" id="D1j-4N-mNS"/>
+                                    <action selector="configResetEvent:" destination="mgb-36-NHi" eventType="touchUpInside" id="Gry-DM-mgT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVT-OA-Vas">
@@ -496,8 +495,7 @@
                                 <state key="normal" title="設定"/>
                                 <connections>
                                     <action selector="configSetEventWithSender:" destination="mgb-36-NHi" eventType="touchUpInside" id="a1q-Vb-JbM"/>
-                                    <action selector="setEvent:" destination="mgb-36-NHi" eventType="touchUpInside" id="zt1-gf-WMI"/>
-                                    <segue destination="NJJ-wR-Xsy" kind="show" identifier="top" id="sUJ-zE-D4O"/>
+                                    <segue destination="QfQ-FP-1BM" kind="show" identifier="planBedtime" id="PtT-2E-mzK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -747,6 +745,7 @@
         <segue reference="vE0-Da-EcL"/>
         <segue reference="6if-PM-Wnv"/>
         <segue reference="Geh-jh-hvO"/>
-        <segue reference="sUJ-zE-D4O"/>
+        <segue reference="PtT-2E-mzK"/>
+        <segue reference="3pl-Ad-eQb"/>
     </inferredMetricsTieBreakers>
 </document>
