@@ -475,15 +475,6 @@
                                     <action selector="backEvent:" destination="7OJ-pQ-rb7" eventType="touchUpInside" id="91l-tV-nSi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVT-OA-Vas">
-                                <rect key="frame" x="172" y="531" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="設定"/>
-                                <connections>
-                                    <action selector="configSetEventWithSender:" destination="mgb-36-NHi" eventType="touchUpInside" id="a1q-Vb-JbM"/>
-                                    <segue destination="NJJ-wR-Xsy" kind="show" identifier="top" id="sUJ-zE-D4O"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="次回通知設定" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9e-td-peS">
                                 <rect key="frame" x="0.0" y="80" width="375" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -491,6 +482,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j63-Nh-U5c">
+                                <rect key="frame" x="203" y="531" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="リセット"/>
+                                <connections>
+                                    <action selector="resetEvent:" destination="mgb-36-NHi" eventType="touchUpInside" id="D1j-4N-mNS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVT-OA-Vas">
+                                <rect key="frame" x="134" y="531" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="設定"/>
+                                <connections>
+                                    <action selector="configSetEventWithSender:" destination="mgb-36-NHi" eventType="touchUpInside" id="a1q-Vb-JbM"/>
+                                    <action selector="setEvent:" destination="mgb-36-NHi" eventType="touchUpInside" id="zt1-gf-WMI"/>
+                                    <segue destination="NJJ-wR-Xsy" kind="show" identifier="top" id="sUJ-zE-D4O"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -738,6 +747,6 @@
         <segue reference="vE0-Da-EcL"/>
         <segue reference="6if-PM-Wnv"/>
         <segue reference="Geh-jh-hvO"/>
-        <segue reference="RME-uA-qg7"/>
+        <segue reference="sUJ-zE-D4O"/>
     </inferredMetricsTieBreakers>
 </document>
