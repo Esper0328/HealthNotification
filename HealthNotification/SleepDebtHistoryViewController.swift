@@ -32,6 +32,10 @@ class SleepDebtHistoryViewController: UIViewController {
         viewDidLoad()
     }
     
+    @IBAction func backToTopEvent(_ sender: Any) {
+        performSegue(withIdentifier: "backToTop", sender: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sleepDebtValueLabel.text = String(sleepDebt[weekDay])

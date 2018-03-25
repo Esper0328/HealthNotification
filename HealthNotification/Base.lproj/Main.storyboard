@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -71,6 +72,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="睡眠負債"/>
+                                <connections>
+                                    <action selector="sleepDebtEvent:" destination="NJJ-wR-Xsy" eventType="touchUpInside" id="LXY-Cn-HrY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="TzE-HS-5pA">
                                 <rect key="frame" x="126" y="497" width="125" height="60"/>
@@ -117,6 +121,7 @@
                         <segue destination="Njp-G8-sTu" kind="show" identifier="refresh" id="mub-ug-TR8"/>
                         <segue destination="mgb-36-NHi" kind="show" identifier="config" id="e6f-X4-Kg8"/>
                         <segue destination="QfQ-FP-1BM" kind="show" identifier="inputBedtime" id="cIi-qI-eQY"/>
+                        <segue destination="kvj-pa-DxP" kind="show" identifier="sleepDebt" id="pBl-y7-E1K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dwz-Pe-rug" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -207,6 +212,7 @@
                         <outlet property="timeOfSleepLabel" destination="6db-cn-afV" id="Qyn-wZ-H46"/>
                         <outlet property="wakeTimeLabel" destination="0NH-Jt-aiT" id="mk9-Bm-mdF"/>
                         <segue destination="NJJ-wR-Xsy" kind="show" identifier="backToTopViewFromInput" id="RME-uA-qg7"/>
+                        <segue destination="kvj-pa-DxP" kind="show" identifier="sleepDebtFromInput" id="Ak2-0v-rPk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o4Z-99-Iyz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -740,15 +746,115 @@
             </objects>
             <point key="canvasLocation" x="1246" y="-592"/>
         </scene>
+        <!--Sleep Debt History View Controller-->
+        <scene sceneID="LtI-g0-fHb">
+            <objects>
+                <viewController id="kvj-pa-DxP" customClass="SleepDebtHistoryViewController" customModule="SleepDebtWatcher" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YnM-lK-xWY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="睡眠負債履歴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfl-1j-IvQ">
+                                <rect key="frame" x="111" y="20" width="152" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="sleepDebtViewLabel"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97Z-mT-XCP">
+                                <rect key="frame" x="100" y="605" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="backToTopFromSleepDebtButton"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backToTopEvent:" destination="kvj-pa-DxP" eventType="touchUpInside" id="Cs8-xS-U2a"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sleep State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LyT-Hu-iGJ">
+                                <rect key="frame" x="16" y="91" width="115" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="sleepStateLabel"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sleep Debt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOA-M1-STc">
+                                <rect key="frame" x="23" y="143" width="108" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="sleepDebtLabel"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[H]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfu-W7-4wc">
+                                <rect key="frame" x="278" y="143" width="35" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="sleepDebtUnitLabel"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCs-CQ-ERk">
+                                <rect key="frame" x="186" y="143" width="64" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="sleepDebtValueLabel"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNS-wl-IrL">
+                                <rect key="frame" x="186" y="91" width="58" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="sleepStateValueLabel"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmO-ja-XS2">
+                                <rect key="frame" x="215" y="605" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="resetSleepDebtButton"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetSleepDebtEvent:" destination="kvj-pa-DxP" eventType="touchUpInside" id="36h-Kh-H6F"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zTK-yk-Y2d" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="-1" y="275" width="376" height="201"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="barDebtChartViewLabel">
+                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="SZ0-xl-P7X"/>
+                    </view>
+                    <connections>
+                        <outlet property="barDebtChartView" destination="zTK-yk-Y2d" id="vS3-SW-93u"/>
+                        <outlet property="sleepDebtValueLabel" destination="wCs-CQ-ERk" id="UML-1Q-gtE"/>
+                        <segue destination="NJJ-wR-Xsy" kind="show" identifier="backToTop" id="oGf-i9-Elo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HSa-H0-3Ls" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1143" y="-640"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ship" width="1728" height="2592"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Ak2-0v-rPk"/>
         <segue reference="vE0-Da-EcL"/>
         <segue reference="6if-PM-Wnv"/>
         <segue reference="Geh-jh-hvO"/>
-        <segue reference="PtT-2E-mzK"/>
-        <segue reference="3pl-Ad-eQb"/>
+        <segue reference="cIi-qI-eQY"/>
+        <segue reference="oGf-i9-Elo"/>
     </inferredMetricsTieBreakers>
 </document>

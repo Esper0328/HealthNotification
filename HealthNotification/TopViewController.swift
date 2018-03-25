@@ -44,6 +44,9 @@ class TopViewController: UIViewController{
         performSegue(withIdentifier: "inputBedtime",sender: nil)
     }
     
+    @IBAction func sleepDebtEvent(_ sender: Any) {
+        performSegue(withIdentifier: "sleepDebt",sender: nil)
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == "signview"){
             let viewController: SignViewController = (segue.destination as? SignViewController)!
