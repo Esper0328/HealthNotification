@@ -92,6 +92,13 @@ class ConfigViewController: UIViewController, UNUserNotificationCenterDelegate, 
         super.didReceiveMemoryWarning()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if (segue.identifier == "planBedtime"){
+            let viewController: BedtimeInputViewController = (segue.destination as? BedtimeInputViewController)!
+            viewController.sleepInputMode = .Plan
+        }
+    }
+    
     func tableView(_ table: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notificationFrequencyList.count
     }

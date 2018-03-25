@@ -53,6 +53,10 @@ class TopViewController: UIViewController{
             let viewController: CBTViewController = (segue.destination as? CBTViewController)!
             viewController.isViewFromTop = true
         }
+        else if(segue.identifier == "inputBedtime"){
+            let viewController: BedtimeInputViewController = (segue.destination as? BedtimeInputViewController)!
+            viewController.sleepInputMode = .Result
+        }
     }
     
     override func viewDidLoad() {
