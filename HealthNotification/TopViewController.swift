@@ -18,8 +18,6 @@ class TopViewController: UIViewController{
     @IBOutlet weak var sleepDebtButton: UIButton!
     @IBOutlet weak var configButton: UIButton!
     
-    var isConfigFinished: Bool = false
-    
     @IBAction func stressCheckEvent(_ sender: Any) {
         performSegue(withIdentifier: "signview", sender: nil)
     }
@@ -60,6 +58,7 @@ class TopViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var isConfigFinished: Bool = false
         isConfigFinished = UserDefaults.standard.bool(forKey: "isConfigFinished")
         if isConfigFinished {
             refreshButton.isEnabled = true
