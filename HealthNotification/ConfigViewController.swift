@@ -60,7 +60,7 @@ class ConfigViewController: UIViewController, UNUserNotificationCenterDelegate, 
     }
     
     @IBAction func setEvent(_ sender: Any) {
-        
+        UserDefaults.standard.set(true, forKey: "isConfigFinished")
     }
     
     @IBAction func resetEvent(_ sender: Any) {

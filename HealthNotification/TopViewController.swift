@@ -28,7 +28,6 @@ class TopViewController: UIViewController{
     
     
     @IBAction func configEvent(_ sender: Any) {
-        UserDefaults.standard.set(true, forKey: "isConfigFinished")
         performSegue(withIdentifier: "config",sender: nil)
     }
 
