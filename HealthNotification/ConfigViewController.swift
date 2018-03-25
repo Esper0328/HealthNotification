@@ -18,7 +18,6 @@ class ConfigViewController: UIViewController, UNUserNotificationCenterDelegate, 
     }
     
     let notificationFrequencyList: NSArray = ["毎日", "毎週","１回だけ"]
-    var isConfigFinished: Bool = false
 
     @IBOutlet weak var datepicker: UIDatePicker!
     var notificationFrequency : NotificationFrequency = .Everyday
@@ -53,14 +52,14 @@ class ConfigViewController: UIViewController, UNUserNotificationCenterDelegate, 
             //通知を予約
             let center = UNUserNotificationCenter.current()
             center.add(request, withCompletionHandler: nil)
-            
             performSegue(withIdentifier: "planBedtime", sender: nil)
-            //Input Viewに遷移->設定終了後isConfigFinishedフラグをTrueに変更
+  
         }
     }
     
     @IBAction func configResetEvent(_ sender: Any) {
         UserDefaults.standard.set(false, forKey: "isConfigFinished")
+        //cancel Notification
     }
 
     @IBAction func backEvent(_ sender: Any) {
@@ -72,6 +71,7 @@ class ConfigViewController: UIViewController, UNUserNotificationCenterDelegate, 
         table.allowsMultipleSelection = false
         self.datepicker.minimumDate = datepicker.date
         //isConfigFinishedフラグ == false -> backbutton disable
+        //let isConfigFinished: Bool = false
     }
     
     override func didReceiveMemoryWarning() {
